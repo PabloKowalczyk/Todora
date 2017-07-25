@@ -1,0 +1,20 @@
+imports:
+    - { resource: "services/application/command_handler.yml" }
+    - { resource: "services/aliases.yaml" }
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Todora\Application\:
+        resource: "%kernel.project_dir%/src/Todora/Application"
+        exclude: "%kernel.project_dir%/src/Todora/Application/{Command,Query}"
+
+    Todora\Infrastructure\:
+        resource: "%kernel.project_dir%/src/Todora/Infrastructure"
+
+    Todora\UserInterface\:
+        resource: "%kernel.project_dir%/src/Todora/UserInterface"
+        public: true

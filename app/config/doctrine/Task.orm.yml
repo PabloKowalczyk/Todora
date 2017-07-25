@@ -1,0 +1,26 @@
+Todora\Domain\Task:
+    type: entity
+    table: projects_tasks
+    id:
+        id:
+            type: uuid
+            generator: { strategy: NONE }
+    fields:
+        createdAt:
+            type: datetime
+            column: created_at
+            nullable: false
+        done:
+            type: boolean
+            nullable: false
+    embedded:
+        description:
+            class: Todora\Domain\Task\Description
+            columnPrefix: false
+    manyToOne:
+        project:
+            targetEntity: Todora\Domain\Project
+            joinColumn:
+                nullable: false
+                name: project_id
+                referencedColumnName: id

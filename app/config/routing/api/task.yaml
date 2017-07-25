@@ -1,0 +1,4 @@
+todora.api.task.create:
+    defaults: { _controller: Todora\UserInterface\Web\Json\Task\CreateNewTaskAction }
+    path: /create
+    methods: POST

@@ -1,0 +1,8 @@
+Todora\Domain\Project\Name:
+    type: embeddable
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: false
+            nullable: false

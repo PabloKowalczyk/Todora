@@ -1,0 +1,16 @@
+services:
+    _defaults:
+        autowire: true
+        public: true
+
+    Todora\Application\Command\CreateNewProjectHandler:
+        tags:
+            - { name: tactician.handler, command: Todora\Application\Command\CreateNewProject }
+
+    Todora\Application\Command\CreateNewTaskHandler:
+        tags:
+            - { name: tactician.handler, command: Todora\Application\Command\CreateNewTask }
+
+    Todora\Application\Command\RenameProjectHandler:
+        tags:
+            - { name: tactician.handler, command: Todora\Application\Command\RenameProject }

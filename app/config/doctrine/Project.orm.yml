@@ -1,0 +1,15 @@
+Todora\Domain\Project:
+    type: entity
+    table: projects
+    id:
+        id:
+            type: uuid
+            generator: { strategy: NONE }
+    fields:
+        createdAt:
+            type: datetimetz
+            column: created_at
+            nullable: false
+    embedded:
+        name:
+            class: Todora\Domain\Project\Name

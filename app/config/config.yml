@@ -1,0 +1,84 @@
+imports:
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+
+framework:
+    #esi: ~
+    #translator: { fallbacks: ['%locale%'] }
+    secret: '%env(APP_SECRET)%'
+    router:
+        resource: '%kernel.root_dir%/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: ~
+    templating:
+        engines: ['twig']
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: snc_redis.session.handler
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    paths:
+        "%kernel.root_dir%/../resources/templates/Todora": Todora
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        url: "%env(DATABASE_URL)%"
+
+        types:
+            uuid:  Ramsey\Uuid\Doctrine\UuidType
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: false
+        mappings:
+            TodoraNamespace:
+                type: yml
+                dir: '%kernel.root_dir%/config/doctrine'
+                is_bundle: false
+                prefix: Todora\Domain
+
+sensio_framework_extra:
+    router:      { annotations: false }
+    request:     { converters: true, auto_convert: true }
+    view:        { annotations: false }
+    cache:       { annotations: false }
+    security:    { annotations: false }
+    psr_message: { enabled: true }
+
+tactician:
+    commandbus:
+        default:
+            middleware:
+                - tactician.middleware.validator
+                - tactician.middleware.doctrine
+                - tactician.middleware.command_handler
+
+snc_redis:
+    clients:
+        default:
+            type: predis
+            alias: default
+            dsn: "redis://%env(REDIS_HOST)%"
+            logging: "%kernel.debug%"
+    session:
+        client: default
+        ttl: 3600
