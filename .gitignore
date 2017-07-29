@@ -14,7 +14,7 @@
 !var/SymfonyRequirements.php
 /vendor/
 /public/bundles/
-.env
+/.env
 
 .vagrant/
 .idea/
