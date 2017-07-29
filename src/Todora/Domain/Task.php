@@ -53,4 +53,9 @@ class Task
             $project
         );
     }
+
+    public function complete()
+    {
+        $this->done = true;
+    }
 }
