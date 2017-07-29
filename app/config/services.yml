@@ -18,3 +18,7 @@ services:
     Todora\UserInterface\:
         resource: "%kernel.project_dir%/src/Todora/UserInterface"
         public: true
+
+    Todora\Application\EventListener\InvalidCommandExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
