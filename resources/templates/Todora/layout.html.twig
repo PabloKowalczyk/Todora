@@ -51,18 +51,23 @@
                 form.addEventListener("submit", event => {
                     event.preventDefault();
 
+                    const headers = new Headers();
                     const form = event.target;
                     const formData = formToObject(event.target);
                     const url = form.getAttribute("action");
                     const method = form.getAttribute("method");
 
-                    console.log(formData, "form data");
+                    headers.append("X-Requested-With", "XMLHttpRequest");
 
-                    fetch(url, {
-                        method: method,
-                        body: JSON.stringify(formData),
-                        credentials: "same-origin"
-                    }).then(response => {
+                    fetch(
+                        url,
+                        {
+                            method: method,
+                            body: JSON.stringify(formData),
+                            credentials: "same-origin",
+                            headers: headers
+                        }
+                    ).then(response => {
                         if (response.status !== 200) {
                             alert("Something goes wrong: " + response.statusText);
 
