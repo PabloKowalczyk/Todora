@@ -14,4 +14,4 @@ cp /vagrant/vagrant/php/fpm/pool.d/www.conf "/etc/php/$PHP_VERSION/fpm/pool.d/ww
 rm -f "/etc/php/$PHP_VERSION/fpm/pool.d/stage.conf";
 cp /vagrant/vagrant/php/fpm/pool.d/stage.conf "/etc/php/$PHP_VERSION/fpm/pool.d/stage.conf";
 
-service php7.1-fpm restart;
+service "php$PHP_VERSION-fpm" restart;
