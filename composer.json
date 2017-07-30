@@ -18,6 +18,7 @@
         "php-64bit": ">=7.1.0",
         "ext-pdo_pgsql": ">=7.1.0",
         "ext-pgsql": ">=7.1.0",
+        "ext-apcu": ">=5.0.0",
         "beberlei/assert": "^2.7",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
