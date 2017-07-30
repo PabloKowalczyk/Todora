@@ -14,9 +14,9 @@ rm -f /etc/nginx/nginx.conf
 cp /vagrant/vagrant/nginx/nginx.conf /etc/nginx/nginx.conf
 
 cp /vagrant/vagrant/nginx/todora.dev /etc/nginx/sites-available
-cp /vagrant/vagrant/nginx/prod.todora.dev /etc/nginx/sites-available
+cp /vagrant/vagrant/nginx/stage.todora.dev /etc/nginx/sites-available
 
 ln -fs /etc/nginx/sites-available/todora.dev /etc/nginx/sites-enabled/todora.dev
-ln -fs /etc/nginx/sites-available/prod.todora.dev /etc/nginx/sites-enabled/prod.todora.dev
+ln -fs /etc/nginx/sites-available/stage.todora.dev /etc/nginx/sites-enabled/stage.todora.dev
 
 service nginx reload;
