@@ -9,15 +9,10 @@ Vagrant.configure("2") do |config|
     config.vm.hostname = "todora.dev"
     config.hostsupdater.aliases = ["stage.todora.dev"]
 
-     config.vm.synced_folder ".",
-        "/vagrant",
-        type: "rsync",
-        rsync__exclude: [
-            ".git/",
-            ".idea/",
-            "vendor/",
-            ".vagrant/"
-        ]
+    config.vm.synced_folder ".", "/vagrant",
+        mount_options: ["actimeo=1"],
+        nfs: true,
+        linux__nfs_options: ["rw", "no_subtree_check", "all_squash", "async"]
 
     if Vagrant::Util::Platform.windows? then
         config.winnfsd.uid = 1000
