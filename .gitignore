@@ -14,6 +14,9 @@
 !var/SymfonyRequirements.php
 /vendor/
 /public/bundles/
+/public/build/
+/public/src/node_modules/
+/public/src/.sass-cache/
 /.env
 
 .vagrant/
