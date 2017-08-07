@@ -1,6 +1,10 @@
 imports:
     - { resource: config.yml }
 
+framework:
+    assets:
+        json_manifest_path: "%kernel.project_dir%/public/rev-manifest.json"
+
 monolog:
     handlers:
         main:
