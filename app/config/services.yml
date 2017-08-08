@@ -9,14 +9,14 @@ services:
         public: false
 
     Todora\Application\:
-        resource: "%kernel.project_dir%/src/Todora/Application"
-        exclude: "%kernel.project_dir%/src/Todora/Application/{Command,Query}"
+        resource: "%kernel.project_dir%/src/Application"
+        exclude: "%kernel.project_dir%/src/Application/{Command,Query}"
 
     Todora\Infrastructure\:
-        resource: "%kernel.project_dir%/src/Todora/Infrastructure"
+        resource: "%kernel.project_dir%/src/Infrastructure"
 
     Todora\UserInterface\:
-        resource: "%kernel.project_dir%/src/Todora/UserInterface"
+        resource: "%kernel.project_dir%/src/UserInterface"
         public: true
 
     Todora\Application\EventListener\InvalidCommandExceptionListener:

@@ -49,7 +49,7 @@ final class Kernel extends BaseKernel
 
     public function getRootDir()
     {
-        return __DIR__ . "/../../app";
+        return __DIR__ . "/../app";
     }
 
     public function getCacheDir()

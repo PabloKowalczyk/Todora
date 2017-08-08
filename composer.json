@@ -4,7 +4,7 @@
     "description": "Another Todo app named Todora",
     "license": "MIT",
     "autoload": {
-        "psr-4": { "": "src/" }
+        "psr-4": { "Todora\\": "src/" }
     },
     "autoload-dev": {
         "psr-4": {
