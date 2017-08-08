@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fixtures;
+namespace Todora\Fixtures;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;

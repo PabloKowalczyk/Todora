@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Functional\UserInterface;
+namespace Todora\Tests\Functional\UserInterface;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

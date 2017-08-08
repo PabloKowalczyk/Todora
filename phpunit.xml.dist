@@ -19,10 +19,10 @@
 
     <testsuites>
         <testsuite name="unit-tests">
-            <directory>tests/Todora/Tests/Unit</directory>
+            <directory>tests/Unit</directory>
         </testsuite>
         <testsuite name="functional-tests">
-            <directory>tests/Todora/Tests/Functional</directory>
+            <directory>tests/Functional</directory>
         </testsuite>
     </testsuites>
 

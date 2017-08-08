@@ -8,8 +8,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/Tests/",
-            "Fixtures\\": "fixtures/"
+            "Todora\\Tests\\": "tests/",
+            "Todora\\Fixtures\\": "fixtures/"
         },
         "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
