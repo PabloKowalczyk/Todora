@@ -24,6 +24,13 @@ framework:
     trusted_hosts: ~
     session:
         handler_id: snc_redis.session.handler
+        metadata_update_threshold: 120
+        use_strict_mode: true
+        cookie_secure: true
+        cookie_lifetime: 3600
+        gc_divisor: 10000
+        gc_probability: 1
+        gc_maxlifetime: 3600
     fragments: ~
     http_method_override: true
     assets: ~

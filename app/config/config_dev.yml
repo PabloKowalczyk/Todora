@@ -31,4 +31,3 @@ snc_redis:
         ttl: 3600
     session:
         client: default
-        ttl: 7200
