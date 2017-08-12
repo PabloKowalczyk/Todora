@@ -15,6 +15,7 @@
 /vendor/
 /public/bundles/
 /public/build/
+/public/rev-manifest.json
 /public/src/node_modules/
 /public/src/.sass-cache/
 /.env
