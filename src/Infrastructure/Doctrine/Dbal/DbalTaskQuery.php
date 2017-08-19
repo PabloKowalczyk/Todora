@@ -36,6 +36,7 @@ class DbalTaskQuery implements TasksQueryInterface
             ->from("projects_tasks", "pt")
             ->where("pt.project_id IN (:projectIds)")
             ->orderBy("pt.created_at", "DESC")
+            ->addOrderBy("pt.id", "DESC")
             ->setParameter("projectIds", $projectIds, Connection::PARAM_STR_ARRAY);
 
         $tasksData = $this->connection
