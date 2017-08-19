@@ -3,16 +3,17 @@
   "version": "0.1.0",
   "description": "",
   "main": "gulpfile.js",
-  "dependencies": {},
   "devDependencies": {
     "bootstrap": "^4.0.0-beta",
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
+    "gulp-livereload": "^3.8.1",
     "gulp-rev": "^8.0.0",
     "gulp-watch": "^4.3.11"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "rm -rf build && gulp watch"
   },
   "author": "",
   "license": "MIT"

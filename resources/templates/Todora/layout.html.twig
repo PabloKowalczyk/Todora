@@ -8,20 +8,28 @@
             {{ siteTitle }} | TodoraApp
         </title>
 
-        <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-              integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-              crossorigin="anonymous"
-        >
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset("css/reboot.css") }}">
+        <link rel="stylesheet" href="{{ asset("css/layout.css") }}">
+        <link rel="stylesheet" href="{{ asset("css/top-bar.css") }}">
+        <link rel="stylesheet" href="{{ asset("css/projects-list.css") }}">
+        <link rel="stylesheet" href="{{ asset("css/columns.css") }}">
+        <link rel="stylesheet" href="{{ asset("css/tasks-list.css") }}">
+        <link rel="stylesheet" href="{{ asset("css/checkbox.css") }}">
+
+        <link rel="icon" type="image/png" sizes="any" href="{{ asset('favicon/favicon.png') }}">
     </head>
     <body>
-        <nav class="navbar navbar-inverse bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="/">Todora</a>
+        <main>
+            <div class="top-bar">
+                <h1 class="top-bar__header">
+                    <a href="{{ path("todora.board.index") }}" class="top-bar__link">
+                        Todora
+                    </a>
+                </h1>
+                <hr class="top-bar__hr">
             </div>
-        </nav>
 
-        <main class="container">
             {% block content %}{% endblock %}
         </main>
 
@@ -29,41 +37,29 @@
             JS is disabled. App can't work without enabled JavaScript.
         </noscript>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-                integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-                crossorigin="anonymous"
-        ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-                integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-                crossorigin="anonymous"
-        ></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-                integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-                crossorigin="anonymous"
-        ></script>
+        {% if app.environment == "dev" %}
+            <script src="http://{{ app.request.httpHost }}:35729/livereload.js?snipver=1" async></script>
+        {% endif %}
 
-        <script src="https://rawgit.com/serbanghita/formToObject.js/master/dist/formToObject.min.js"></script>
+        <script defer>
+            const tasksCheckboxes = document.querySelectorAll(".js-task-complete");
 
-        <script>
-            const ajaxForms = document.querySelectorAll(".js-form-ajax");
-
-            ajaxForms.forEach(form => {
-                form.addEventListener("submit", event => {
-                    event.preventDefault();
+            tasksCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", event => {
+                    const element = event.target;
+                    const taskId = element.getAttribute("id");
+                    const url = element.dataset.url;
 
                     const headers = new Headers();
-                    const form = event.target;
-                    const formData = formToObject(event.target);
-                    const url = form.getAttribute("action");
-                    const method = form.getAttribute("method");
+                    const body = {taskId: taskId};
 
                     headers.append("X-Requested-With", "XMLHttpRequest");
 
                     fetch(
                         url,
                         {
-                            method: method,
-                            body: JSON.stringify(formData),
+                            method: "PATCH",
+                            body: JSON.stringify(body),
                             credentials: "same-origin",
                             headers: headers
                         }
@@ -76,8 +72,6 @@
 
                         window.location.reload(true);
                     });
-
-                    return false;
                 });
             });
         </script>

@@ -1,0 +1,66 @@
+@import "variables";
+
+$checkbox-size: 1.6em;
+
+.checkbox {
+    position: relative;
+    height: $checkbox-size;
+    width: $checkbox-size;
+    margin-right: 1em;
+    margin-left: 1em;
+
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        &:checked + .checkbox__label {
+            &:before {
+                opacity: 1;
+            }
+        }
+
+        &:focus + .checkbox__label:after {
+            box-shadow: 0 0 .35em $color-text;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-bottom: 0;
+        text-indent: -99999px;
+        width: 0;
+        height: 0;
+
+        &:after {
+            cursor: pointer;
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: $checkbox-size;
+            height: $checkbox-size;
+            border: solid 1px $color-text;
+            padding: .2em;
+            transition: box-shadow .15s;
+            box-sizing: border-box;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: $checkbox-size;
+            height: $checkbox-size;
+            transition: opacity .15s;
+            opacity: 0;
+            background: url("../svg/checkmark.svg") no-repeat center center $color-hover;
+            background-size: 80%;
+            box-sizing: border-box;
+        }
+    }
+}

@@ -1,86 +1,52 @@
-{% set siteTitle = "Your projects" %}
+{% set siteTitle = "Your tasks" %}
 
 {% extends "@Todora/layout.html.twig" %}
 
 {% block content %}
-    <div class="row mt-2">
-        <div class="col-md-4">
-            <ul class="nav flex-column nav-pills">
-                {% for project in projects %}
-                    <li class="nav-item">
-                        <a class="nav-link{{ loop.index == 1 ? " active" : '' }}" href="#">
-                            {{ project.name }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="col-md-8">
-            <div class="progress mb-2">
-                <div class="progress-bar" role="progressbar" style="width: 25%; height: 1px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="columns">
+        <div class="columns__column columns__column--left">
+            <div class="projects-list">
+                <nav>
+                    <ul class="projects-list__list">
+                        {% for project in projects %}
+                            <li class="projects-list__list-item">
+                                <a class="projects-list__link{{ loop.index == 1 ? " projects-list__link--active" : '' }}" href="#">
+                                    {{ project.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
             </div>
+        </div>
+        <div class="columns__column columns__column--right">
+            <div class="tasks-list">
+                {% for project in projects %}
+                    <ul class="tasks-list__list {{ loop.index == 1 ? 'tasks-list__list--show' }}"
+                        data-project-id="{{ project.id }}"
+                    >
+                        {% for task in project.tasks %}
+                            <li class="tasks-list__task">
+                                <div class="checkbox">
+                                    <input
+                                        class="checkbox__input js-task-complete"
+                                        type="checkbox"
+                                        id="{{ task.id }}"
+                                        data-url="{{ path('todora.api.task.complete') }}"
+                                        {{ task.done ? "checked" }}
+                                    >
 
-            {% with %}
-                {% set project = projects|first %}
-
-                {% for task in project.tasks %}
-                    <form action="#" class="js-form-ajax" method="post">
-                        <div class="row mb-2">
-                            <div class="col-md-12">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="checkbox" {{ task.done ? "checked" }} name="taskDone">
-                                        <input type="hidden" name="taskId" value="{{ task.id }}">
-                                    </span>
-                                    <input type="text" class="form-control" value="{{ task.description }}" name="taskDescription">
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-primary">
-                                            Save
-                                        </button>
-                                    </span>
+                                    <label for="{{ task.id }}" class="checkbox__label">
+                                        Complete
+                                    </label>
                                 </div>
-                            </div>
-                        </div>
-                    </form>
+
+                                <span>{{ task.description }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 {% endfor %}
-            {% endwith %}
+            </div>
         </div>
     </div>
-
-    <h2>Create project</h2>
-    <form action="{{ path('todora.api.project.create') }}"
-          method="post"
-          class="js-form-ajax"
-    >
-        <label for="projectName">
-            Project name
-        </label>
-        <input type="text" name="projectName" id="projectName">
-        <button type="submit">Create</button>
-    </form>
-
-    <h2>Create task</h2>
-    <form action="{{ path("todora.api.task.create") }}"
-          method="post"
-          class="js-form-ajax"
-    >
-        <label for="description">
-            Task name
-        </label>
-        <input type="text" name="description" id="description">
-        <label for="projectId">
-            Choose project
-        </label>
-        <select name="projectId" id="projectId">
-            {% for project in projects %}
-                <option value="{{ project.id }}">
-                    {{ project.name }}
-                </option>
-            {% endfor %}
-        </select>
-
-        <button type="submit">
-            Add task
-        </button>
-    </form>
 {% endblock %}
