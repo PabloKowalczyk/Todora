@@ -821,16 +821,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.9",
+            "version": "v2.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "4f96fc62cef60093573acea955ed5e07643401d8"
+                "reference": "c78afd51721804f4f76ff30d9b6f6159eb046161"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/4f96fc62cef60093573acea955ed5e07643401d8",
-                "reference": "4f96fc62cef60093573acea955ed5e07643401d8",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/c78afd51721804f4f76ff30d9b6f6159eb046161",
+                "reference": "c78afd51721804f4f76ff30d9b6f6159eb046161",
                 "shasum": ""
             },
             "require": {
@@ -893,7 +893,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-08-16T13:30:32+00:00"
+            "time": "2017-08-18T19:17:35+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -2809,16 +2809,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "b03f285a333f51e58c95cce54109a4a9ed691436"
+                "reference": "424a840dc3bedcdeea510b42e056c77c2d6c4bef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/b03f285a333f51e58c95cce54109a4a9ed691436",
-                "reference": "b03f285a333f51e58c95cce54109a4a9ed691436",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/424a840dc3bedcdeea510b42e056c77c2d6c4bef",
+                "reference": "424a840dc3bedcdeea510b42e056c77c2d6c4bef",
                 "shasum": ""
             },
             "require": {
@@ -2857,7 +2857,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2017-04-06T16:18:34+00:00"
+            "time": "2017-08-17T21:21:00+00:00"
         }
     ],
     "packages-dev": [
