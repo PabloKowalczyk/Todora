@@ -23,7 +23,9 @@
             <div class="tasks-list">
                 {% for project in projects %}
                     <ul class="tasks-list__list {{ loop.index == 1 ? 'tasks-list__list--show' }}"
+                        id="tasks-list"
                         data-project-id="{{ project.id }}"
+                        data-url-complete-task="{{ path('todora.api.task.complete') }}"
                     >
                         {% for task in project.tasks %}
                             <li class="tasks-list__task">
@@ -32,7 +34,6 @@
                                         class="checkbox__input js-task-complete"
                                         type="checkbox"
                                         id="{{ task.id }}"
-                                        data-url="{{ path('todora.api.task.complete') }}"
                                         {{ task.done ? "checked" }}
                                     >
 

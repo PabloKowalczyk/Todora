@@ -43,36 +43,40 @@
 
         <script defer>
             const tasksCheckboxes = document.querySelectorAll(".js-task-complete");
+            const tasksListElement = document.querySelector("#tasks-list");
+            const completeUrl = tasksListElement.dataset.urlCompleteTask;
+
+            const checkboxToggle = (event) => {
+                const element = event.target;
+                const taskId = element.getAttribute("id");
+
+                const headers = new Headers();
+                const body = {taskId: taskId};
+
+                headers.append("X-Requested-With", "XMLHttpRequest");
+
+                fetch(
+                    completeUrl,
+                    {
+                        method: "PATCH",
+                        body: JSON.stringify(body),
+                        credentials: "same-origin",
+                        headers: headers
+                    }
+                ).then(response => {
+                    if (response.status !== 200) {
+                        element.checked = false;
+                        alert("Something goes wrong: " + response.statusText);
+
+                        return;
+                    }
+
+                    element.checked = true;
+                });
+            };
 
             tasksCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener("change", event => {
-                    const element = event.target;
-                    const taskId = element.getAttribute("id");
-                    const url = element.dataset.url;
-
-                    const headers = new Headers();
-                    const body = {taskId: taskId};
-
-                    headers.append("X-Requested-With", "XMLHttpRequest");
-
-                    fetch(
-                        url,
-                        {
-                            method: "PATCH",
-                            body: JSON.stringify(body),
-                            credentials: "same-origin",
-                            headers: headers
-                        }
-                    ).then(response => {
-                        if (response.status !== 200) {
-                            alert("Something goes wrong: " + response.statusText);
-
-                            return;
-                        }
-
-                        window.location.reload(true);
-                    });
-                });
+                checkbox.addEventListener("change", checkboxToggle);
             });
         </script>
     </body>
