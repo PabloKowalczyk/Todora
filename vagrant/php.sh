@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PHP_VERSION="7.1";
+PHP_VERSION="7.2";
 
 rm -f "/etc/php/$PHP_VERSION/cli/php.ini";
 cp /vagrant/vagrant/php/cli/php.ini "/etc/php/$PHP_VERSION/cli/php.ini";

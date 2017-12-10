@@ -2,13 +2,14 @@
 
 export DEBIAN_FRONTEND=noninteractive;
 
-PHP_VERSION="7.1";
+PHP_VERSION="7.2";
 
 ## Add Onrej PPA for php 5.6 - 7.2
 add-apt-repository -y -u ppa:ondrej/php > /dev/null 2>&1;
 
 apt-get install git \
     "php$PHP_VERSION" \
+    "php$PHP_VERSION-common" \
     "php$PHP_VERSION-zip" \
     "php$PHP_VERSION-mbstring" \
     "php$PHP_VERSION-opcache" \

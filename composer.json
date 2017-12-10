@@ -14,10 +14,10 @@
         "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
     "require": {
-        "php": ">=7.1.0",
-        "php-64bit": ">=7.1.0",
-        "ext-pdo_pgsql": ">=7.1.0",
-        "ext-pgsql": ">=7.1.0",
+        "php": ">=7.2.0",
+        "php-64bit": ">=7.2.0",
+        "ext-pdo_pgsql": ">=7.2.0",
+        "ext-pgsql": ">=7.2.0",
         "ext-apcu": ">=5.0.0",
         "beberlei/assert": "^2.7",
         "doctrine/doctrine-bundle": "^1.6",
