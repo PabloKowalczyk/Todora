@@ -17,7 +17,7 @@ if (getenv("APP_DEBUG")) {
     Debug::enable();
 }
 
-$kernel = new Kernel(getenv("APP_ENV"), getenv("APP_DEBUG"));
+$kernel = new Kernel(getenv("APP_ENV"), (bool)getenv("APP_DEBUG"));
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();

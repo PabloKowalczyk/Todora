@@ -29,13 +29,12 @@
         "predis/predis": "^1.1",
         "ramsey/uuid": "^3.6",
         "ramsey/uuid-doctrine": "^1.3",
-        "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^5.0",
         "snc/redis-bundle": "^2.0",
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/psr-http-message-bridge": "^1.0",
         "symfony/swiftmailer-bundle": "^3.0",
-        "symfony/symfony": "3.4.*",
+        "symfony/symfony": "4.0.*",
         "twig/twig": "^2.0",
         "zendframework/zend-diactoros": "^1.4"
     },
@@ -46,21 +45,10 @@
         "pds/skeleton": "^1.0",
         "phpunit/phpunit": "^6.0",
         "pixers/doctrine-profiler-bundle": "^1.0",
-        "sensio/generator-bundle": "^3.0",
-        "symfony/dotenv": "^3.4",
-        "symfony/phpunit-bridge": "^3.4"
+        "symfony/dotenv": "^4.0",
+        "symfony/phpunit-bridge": "^4.0"
     },
     "scripts": {
-        "symfony-scripts": [
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
-        ],
-        "post-install-cmd": [
-            "@symfony-scripts"
-        ],
-        "post-update-cmd": [
-            "@symfony-scripts"
-        ],
         "tests:all": "./vendor/bin/phpunit --colors=always",
         "tests:unit": "./vendor/bin/phpunit --colors=always --testsuite=unit-tests",
         "tests:functional": "./vendor/bin/phpunit --colors=always --testsuite=functional-tests"
