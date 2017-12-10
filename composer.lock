@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4a3fa62e70374ac9703d450940f2108",
+    "content-hash": "4bb0bd80c696fae004f17f3f73217019",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1110,36 +1110,43 @@
         },
         {
             "name": "league/tactician-bundle",
-            "version": "v0.4.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/tactician-bundle.git",
-                "reference": "14b38eb1d855fdd805eee2f6c1c20e956534381f"
+                "reference": "c319482382ade005987a20908893a17024ac5d64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/tactician-bundle/zipball/14b38eb1d855fdd805eee2f6c1c20e956534381f",
-                "reference": "14b38eb1d855fdd805eee2f6c1c20e956534381f",
+                "url": "https://api.github.com/repos/thephpleague/tactician-bundle/zipball/c319482382ade005987a20908893a17024ac5d64",
+                "reference": "c319482382ade005987a20908893a17024ac5d64",
                 "shasum": ""
             },
             "require": {
                 "league/tactician": "^1.0",
-                "php": ">=5.5",
-                "symfony/config": "^2.3|^3.0",
-                "symfony/dependency-injection": "^2.3|^3.0",
-                "symfony/http-kernel": "^2.3|^3.0",
-                "symfony/yaml": "^2.3|^3.0"
+                "league/tactician-container": "^2.0",
+                "php": ">=7.0",
+                "symfony/config": "^2.8|^3.3|^4.0",
+                "symfony/dependency-injection": "^2.8|^3.3|^4.0",
+                "symfony/http-kernel": "^2.8|^3.3|^4.0",
+                "symfony/yaml": "^2.8|^3.3|^4.0"
             },
             "require-dev": {
-                "league/tactician-doctrine": "^1.0",
-                "matthiasnoback/symfony-config-test": "~1.0",
-                "matthiasnoback/symfony-dependency-injection-test": "^0.7",
-                "mockery/mockery": "~0.9.4",
-                "phpunit/phpunit": "~4.5",
-                "symfony/validator": "^2.3|^3.0"
+                "league/tactician-doctrine": "^1.1",
+                "matthiasnoback/symfony-config-test": "^3.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^2.1",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~6.1",
+                "symfony/console": "^2.8|^3.3|^4.0",
+                "symfony/framework-bundle": "^2.8.15|^3.3|^4.0",
+                "symfony/security": "^2.8|^3.3|^4.0",
+                "symfony/security-bundle": "^2.8|^3.3|^4.0",
+                "symfony/validator": "^2.8|^3.3|^4.0"
             },
             "suggest": {
                 "league/tactician-doctrine": "For doctrine transaction middleware",
+                "symfony/console": "For debugging command-to-handler routing using the tactician:debug console command",
+                "symfony/security": "For command security middleware",
                 "symfony/validator": "For command validator middleware"
             },
             "type": "symfony-bundle",
@@ -1150,7 +1157,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "League\\Tactician\\Bundle\\": ""
+                    "League\\Tactician\\Bundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1181,7 +1188,58 @@
                 "symfony",
                 "tactician"
             ],
-            "time": "2016-04-21T08:00:01+00:00"
+            "time": "2017-12-08T11:06:49+00:00"
+        },
+        {
+            "name": "league/tactician-container",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/tactician-container.git",
+                "reference": "d1a5d884e072b8cafbff802d07766076eb2ffcb0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/tactician-container/zipball/d1a5d884e072b8cafbff802d07766076eb2ffcb0",
+                "reference": "d1a5d884e072b8cafbff802d07766076eb2ffcb0",
+                "shasum": ""
+            },
+            "require": {
+                "league/tactician": "^1.0",
+                "php": ">=5.5",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "league/container": "~2.3",
+                "phpunit/phpunit": "~4.3",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Tactician\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nigel Greenway",
+                    "homepage": "http://futurepixels.co.uk"
+                }
+            ],
+            "description": "Tactician integration for any container implementing PSR-11",
+            "keywords": [
+                "container",
+                "container-interop",
+                "di",
+                "interoperable",
+                "league",
+                "tactician"
+            ],
+            "time": "2017-04-13T06:27:12+00:00"
         },
         {
             "name": "league/tactician-doctrine",
@@ -1893,38 +1951,37 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.28",
+            "version": "v5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "65eadf9e3fd5c47eee7986b306a5aed8affe6496"
+                "reference": "0696496cb3e2d23add645d424699e5c723238aad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/65eadf9e3fd5c47eee7986b306a5aed8affe6496",
-                "reference": "65eadf9e3fd5c47eee7986b306a5aed8affe6496",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/0696496cb3e2d23add645d424699e5c723238aad",
+                "reference": "0696496cb3e2d23add645d424699e5c723238aad",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.2",
-                "symfony/dependency-injection": "~2.3|~3.0",
-                "symfony/framework-bundle": "~2.3|~3.0|~4.0"
+                "doctrine/common": "^2.2",
+                "symfony/config": "^3.3|^4.0",
+                "symfony/dependency-injection": "^3.3|^4.0",
+                "symfony/framework-bundle": "^3.3|^4.0",
+                "symfony/http-kernel": "^3.3|^4.0"
             },
             "require-dev": {
-                "doctrine/doctrine-bundle": "~1.5",
-                "doctrine/orm": "~2.4,>=2.4.5",
-                "symfony/asset": "~2.7|~3.0|~4.0",
-                "symfony/browser-kit": "~2.3|~3.0|~4.0",
-                "symfony/dom-crawler": "~2.3|~3.0|~4.0",
-                "symfony/expression-language": "~2.4|~3.0|~4.0",
-                "symfony/finder": "~2.3|~3.0|~4.0",
-                "symfony/phpunit-bridge": "~3.2|~4.0",
-                "symfony/psr-http-message-bridge": "^0.3|^1.0",
-                "symfony/security-bundle": "~2.4|~3.0|~4.0",
-                "symfony/templating": "~2.3|~3.0|~4.0",
-                "symfony/translation": "~2.3|~3.0|~4.0",
-                "symfony/twig-bundle": "~2.3|~3.0|~4.0",
-                "symfony/yaml": "~2.3|~3.0|~4.0",
+                "doctrine/doctrine-bundle": "^1.6",
+                "doctrine/orm": "^2.5",
+                "symfony/browser-kit": "^3.3|^4.0",
+                "symfony/dom-crawler": "^3.3|^4.0",
+                "symfony/expression-language": "^3.3|^4.0",
+                "symfony/finder": "^3.3|^4.0",
+                "symfony/phpunit-bridge": "^3.3|^4.0",
+                "symfony/psr-http-message-bridge": "^0.3",
+                "symfony/security-bundle": "^3.3|^4.0",
+                "symfony/twig-bundle": "^3.3|^4.0",
+                "symfony/yaml": "^3.3|^4.0",
                 "twig/twig": "~1.12|~2.0",
                 "zendframework/zend-diactoros": "^1.3"
             },
@@ -1936,7 +1993,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "5.1.x-dev"
                 }
             },
             "autoload": {
@@ -1959,7 +2016,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-10-12T17:37:20+00:00"
+            "time": "2017-12-04T18:33:55+00:00"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -2985,28 +3042,32 @@
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
-            "version": "v2.4.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
-                "reference": "74b8cc70a4a25b774628ee59f4cdf3623a146273"
+                "reference": "7fc29d2b18c61ed99826b21fbfd1ff9969cc2e7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/74b8cc70a4a25b774628ee59f4cdf3623a146273",
-                "reference": "74b8cc70a4a25b774628ee59f4cdf3623a146273",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/7fc29d2b18c61ed99826b21fbfd1ff9969cc2e7f",
+                "reference": "7fc29d2b18c61ed99826b21fbfd1ff9969cc2e7f",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "~1.0",
                 "doctrine/doctrine-bundle": "~1.0",
-                "php": ">=5.3.2",
-                "symfony/doctrine-bridge": "~2.7|~3.0|~4.0"
+                "php": ">=5.5.9|^7.0",
+                "symfony/doctrine-bridge": "~2.7|~3.0|~4.0",
+                "symfony/framework-bundle": "^3.3|^4.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.3"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -3038,7 +3099,7 @@
                 "Fixture",
                 "persistence"
             ],
-            "time": "2017-10-30T19:26:42+00:00"
+            "time": "2017-12-04T20:26:38+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -3092,27 +3153,33 @@
         },
         {
             "name": "matthimatiker/opcache-bundle",
-            "version": "0.4.3",
+            "version": "0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Matthimatiker/OpcacheBundle.git",
-                "reference": "659cfb6789127c8c2c097b5dc9a3d131d9a3f679"
+                "reference": "16a3ea5fe2e530701650c9f2f67a40d63e917a8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Matthimatiker/OpcacheBundle/zipball/659cfb6789127c8c2c097b5dc9a3d131d9a3f679",
-                "reference": "659cfb6789127c8c2c097b5dc9a3d131d9a3f679",
+                "url": "https://api.github.com/repos/Matthimatiker/OpcacheBundle/zipball/16a3ea5fe2e530701650c9f2f67a40d63e917a8b",
+                "reference": "16a3ea5fe2e530701650c9f2f67a40d63e917a8b",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.5 | ^7.0.0",
-                "symfony/symfony": "^2.3.0 | ^3.0.0"
+                "php": "^7.0.0",
+                "symfony/asset": "^2.7.0 | ^3.0.0 | ^4.0",
+                "symfony/config": "^2.7.0 | ^3.0.0 | ^4.0",
+                "symfony/dependency-injection": "^2.7.0 | ^3.0.0 | ^4.0",
+                "symfony/http-kernel": "^2.7.0 | ^3.0.0 | ^4.0",
+                "symfony/templating": "^2.7.0 | ^3.0.0 | ^4.0",
+                "symfony/web-profiler-bundle": "^2.7.0 | ^3.0.0 | ^4.0",
+                "twig/twig": "^2.0.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "~0.6"
+                "satooshi/php-coveralls": "^1.0.0"
             },
-            "type": "library",
+            "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
                     "Matthimatiker\\OpcacheBundle\\": "."
@@ -3130,7 +3197,7 @@
                 }
             ],
             "description": "Displays the state of the PHP opcache in the Symfony profiler toolbar.",
-            "time": "2016-10-26T10:56:17+00:00"
+            "time": "2017-11-26T17:46:18+00:00"
         },
         {
             "name": "myclabs/deep-copy",

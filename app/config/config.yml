@@ -25,7 +25,6 @@ framework:
     session:
         handler_id: snc_redis.session.handler
         metadata_update_threshold: 120
-        use_strict_mode: true
         cookie_secure: true
         cookie_lifetime: 3600
         gc_divisor: 10000
