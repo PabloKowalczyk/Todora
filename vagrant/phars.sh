@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-COMPOSER_VERSION="1.5.2";
+COMPOSER_VERSION="1.5.5";
 BIN_DIR="/home/ubuntu/bin";
 COMPOSER_FILE="$BIN_DIR/composer";
 
