@@ -16,9 +16,9 @@
     "require": {
         "php": ">=7.2.0",
         "php-64bit": ">=7.2.0",
+        "ext-apcu": ">=5.0.0",
         "ext-pdo_pgsql": ">=7.2.0",
         "ext-pgsql": ">=7.2.0",
-        "ext-apcu": ">=5.0.0",
         "beberlei/assert": "^2.7",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
@@ -35,7 +35,7 @@
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/psr-http-message-bridge": "^1.0",
         "symfony/swiftmailer-bundle": "^3.0",
-        "symfony/symfony": "3.3.*",
+        "symfony/symfony": "3.4.*",
         "twig/twig": "^2.0",
         "zendframework/zend-diactoros": "^1.4"
     },
@@ -47,8 +47,8 @@
         "phpunit/phpunit": "^6.0",
         "pixers/doctrine-profiler-bundle": "^1.0",
         "sensio/generator-bundle": "^3.0",
-        "symfony/dotenv": "^3.3",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/dotenv": "^3.4",
+        "symfony/phpunit-bridge": "^3.4"
     },
     "scripts": {
         "symfony-scripts": [
