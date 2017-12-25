@@ -13,12 +13,10 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-/app/config/parameters.yml
-/build/
+###> symfony/webpack-encore-pack ###
+/node_modules/
 /public/build/
-/public/rev-manifest.json
-/public/src/node_modules/
-/public/src/.sass-cache/
+###< symfony/webpack-encore-pack ###
 
 .vagrant/
 .idea/

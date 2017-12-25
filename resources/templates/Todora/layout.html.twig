@@ -9,6 +9,9 @@
         </title>
 
         <link rel="icon" type="image/png" sizes="any" href="{{ asset('favicon/favicon.png') }}">
+
+        <link rel="stylesheet" href="{{ asset("build/css/vendor.css") }}">
+        <link rel="stylesheet" href="{{ asset("build/css/todora.css") }}">
     </head>
     <body>
         <main>
@@ -27,5 +30,7 @@
         <noscript>
             JS is disabled. App can't work without enabled JavaScript.
         </noscript>
+
+        <script src="{{ asset('build/js/app.js') }}"></script>
     </body>
 </html>
