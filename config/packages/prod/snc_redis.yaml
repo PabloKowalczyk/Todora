@@ -1,0 +1,11 @@
+snc_redis:
+    doctrine:
+        metadata_cache:
+            client: default
+            entity_manager: default
+        result_cache:
+            client: default
+            entity_manager: default
+        query_cache:
+            client: default
+            entity_manager: default

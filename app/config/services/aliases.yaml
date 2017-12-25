@@ -1,7 +1,0 @@
-services:
-    League\Tactician\CommandBus: "@tactician.commandbus.default"
-    Doctrine\DBAL\Connection: "@doctrine.dbal.default_connection"
-    Todora\Application\Query\Task\TasksQueryInterface: '@Todora\Infrastructure\Doctrine\Dbal\DbalTaskQuery'
-    Todora\Application\Query\Project\ProjectsQueryInterface: '@Todora\Infrastructure\Doctrine\Dbal\DbalProjectsQuery'
-    Todora\Domain\Project\ProjectRepositoryInterface: '@Todora\Infrastructure\Doctrine\ORM\ProjectRepository'
-    Todora\Domain\Task\TaskRepositoryInterface: '@Todora\Infrastructure\Doctrine\ORM\TaskRepository'

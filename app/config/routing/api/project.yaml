@@ -1,9 +1,0 @@
-todora.api.project.create:
-    defaults: { _controller: Todora\UserInterface\Web\Json\Project\CreateNewProjectAction }
-    path: /create
-    methods: POST
-
-todora.api.project.rename:
-    defaults: { _controller: Todora\UserInterface\Web\Json\Project\RenameProjectAction }
-    path: /rename
-    methods: POST

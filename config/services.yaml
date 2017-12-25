@@ -1,0 +1,25 @@
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'en'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    League\Tactician\CommandBus: "@tactician.commandbus.default"
+
+    Todora\:
+        resource: '../src/*'
+        exclude: '../src/{UserInterface,Application/Command}'
+
+    Todora\UserInterface\:
+        resource: '../src/UserInterface'
+        public: true
+
+    Todora\Application\Command\:
+        resource: '../src/Application/Command/*Handler.php'
+        tags:
+            - { name: tactician.handler, typehints: true }

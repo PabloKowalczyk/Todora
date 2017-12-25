@@ -1,6 +1,0 @@
-todora.api:
-    resource: "routing/api.yaml"
-    prefix: /api
-
-todora.board:
-    resource: "routing/board.yml"

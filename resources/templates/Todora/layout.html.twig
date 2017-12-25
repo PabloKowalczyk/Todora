@@ -8,15 +8,6 @@
             {{ siteTitle }} | TodoraApp
         </title>
 
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin-ext" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset("css/reboot.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/layout.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/top-bar.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/projects-list.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/columns.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/tasks-list.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/checkbox.css") }}">
-
         <link rel="icon" type="image/png" sizes="any" href="{{ asset('favicon/favicon.png') }}">
     </head>
     <body>
@@ -36,48 +27,5 @@
         <noscript>
             JS is disabled. App can't work without enabled JavaScript.
         </noscript>
-
-        {% if app.environment == "dev" %}
-            <script src="http://{{ app.request.httpHost }}:35729/livereload.js?snipver=1" async></script>
-        {% endif %}
-
-        <script defer>
-            const tasksCheckboxes = document.querySelectorAll(".js-task-complete");
-            const tasksListElement = document.querySelector("#tasks-list");
-            const completeUrl = tasksListElement.dataset.urlCompleteTask;
-
-            const checkboxToggle = (event) => {
-                const element = event.target;
-                const taskId = element.getAttribute("id");
-
-                const headers = new Headers();
-                const body = {taskId: taskId};
-
-                headers.append("X-Requested-With", "XMLHttpRequest");
-
-                fetch(
-                    completeUrl,
-                    {
-                        method: "PATCH",
-                        body: JSON.stringify(body),
-                        credentials: "same-origin",
-                        headers: headers
-                    }
-                ).then(response => {
-                    if (response.status !== 200) {
-                        element.checked = false;
-                        alert("Something goes wrong: " + response.statusText);
-
-                        return;
-                    }
-
-                    element.checked = true;
-                });
-            };
-
-            tasksCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener("change", checkboxToggle);
-            });
-        </script>
     </body>
 </html>

@@ -14,7 +14,14 @@
     <php>
         <ini name="error_reporting" value="-1" />
         <server name="KERNEL_CLASS" value="Todora\Kernel" />
-        <server name="DATABASE_URL" value="pgsql://127.0.0.1" />
+        <server name="DATABASE_URL" value="pgsql://todora_dev:todora_dev_password@127.0.0.1:5432/todora_dev?charset=UTF-8&amp;serverVersion=9.6" />
+        <env name="SHELL_VERBOSITY" value="-1" />
+        <env name="ADMIN_PASSWORD" value="admin" />
+
+        <!-- ###+ snc/redis-bundle ### -->
+        <!-- passwords that contain special characters (@, %, :, +) must be urlencoded -->
+        <env name="REDIS_URL" value="redis://localhost"/>
+        <!-- ###- snc/redis-bundle ### -->
     </php>
 
     <testsuites>

@@ -1,5 +1,0 @@
-Todora\Application\Command\CompleteTask:
-    properties:
-        taskId:
-            - Uuid: ~
-            - NotBlank: ~

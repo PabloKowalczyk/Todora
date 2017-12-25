@@ -13,7 +13,16 @@ class BoardControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client
-            ->request("GET", "/");
+            ->request(
+                "GET",
+                "/",
+                [],
+                [],
+                [
+                    "PHP_AUTH_USER" => "admin",
+                    "PHP_AUTH_PW" => 'admin'
+                ]
+            );
 
         $response = $client->getResponse();
 

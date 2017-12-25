@@ -1,4 +1,0 @@
-todora.board.index:
-    defaults: { _controller: Todora\UserInterface\Web\Controller\BoardController:indexAction }
-    methods: GET
-    path: /

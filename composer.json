@@ -1,57 +1,50 @@
 {
-    "name": "todora/todora",
     "type": "project",
-    "description": "Another Todo app named Todora",
-    "license": "MIT",
-    "autoload": {
-        "psr-4": { "Todora\\": "src/" }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Todora\\Tests\\": "tests/",
-            "Todora\\Fixtures\\": "fixtures/"
-        },
-        "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
-    },
+    "license": "proprietary",
+    "description": "Project description",
     "require": {
         "php": ">=7.2.0",
         "php-64bit": ">=7.2.0",
         "ext-apcu": ">=5.0.0",
+        "ext-iconv": "*",
         "ext-pdo_pgsql": ">=7.2.0",
         "ext-pgsql": ">=7.2.0",
-        "beberlei/assert": "^2.7",
-        "doctrine/doctrine-bundle": "^1.6",
-        "doctrine/doctrine-cache-bundle": "^1.2",
-        "doctrine/orm": "^2.5",
+        "beberlei/assert": "^2.8",
         "egulias/email-validator": "^2.1",
         "league/tactician-bundle": "^1.1",
         "league/tactician-doctrine": "^1.1",
         "predis/predis": "^1.1",
-        "ramsey/uuid": "^3.6",
-        "ramsey/uuid-doctrine": "^1.3",
-        "sensio/framework-extra-bundle": "^5.0",
+        "ramsey/uuid": "^3.7",
+        "ramsey/uuid-doctrine": "^1.4",
+        "roave/security-advisories": "dev-master",
+        "sensio/framework-extra-bundle": "^5.1",
         "snc/redis-bundle": "^2.0",
-        "symfony/monolog-bundle": "^3.0.2",
+        "symfony/asset": "^4.0",
+        "symfony/console": "^4.0",
+        "symfony/flex": "^1.0",
+        "symfony/framework-bundle": "^4.0",
+        "symfony/lts": "^4@dev",
+        "symfony/orm-pack": "^1.0",
         "symfony/psr-http-message-bridge": "^1.0",
-        "symfony/swiftmailer-bundle": "^3.0",
-        "symfony/symfony": "4.0.*",
-        "twig/twig": "^2.0",
-        "zendframework/zend-diactoros": "^1.4"
+        "symfony/security-bundle": "^4.0",
+        "symfony/templating": "^4.0",
+        "symfony/twig-bundle": "^4.0",
+        "symfony/validator": "^4.0",
+        "symfony/yaml": "^4.0",
+        "zendframework/zend-diactoros": "^1.6"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.0",
-        "fzaninotto/faker": "^1.6",
-        "matthimatiker/opcache-bundle": "^0.7",
+        "fzaninotto/faker": "^1.7",
+        "matthimatiker/opcache-bundle": "^0.7.0",
         "pds/skeleton": "^1.0",
-        "phpunit/phpunit": "^6.0",
         "pixers/doctrine-profiler-bundle": "^1.0",
+        "symfony/browser-kit": "^4.0",
+        "symfony/css-selector": "^4.0",
         "symfony/dotenv": "^4.0",
-        "symfony/phpunit-bridge": "^4.0"
-    },
-    "scripts": {
-        "tests:all": "./vendor/bin/phpunit --colors=always",
-        "tests:unit": "./vendor/bin/phpunit --colors=always --testsuite=unit-tests",
-        "tests:functional": "./vendor/bin/phpunit --colors=always --testsuite=functional-tests"
+        "symfony/phpunit-bridge": "^4.0",
+        "symfony/profiler-pack": "^1.0",
+        "symfony/web-server-bundle": "^4.0"
     },
     "config": {
         "preferred-install": {
@@ -59,12 +52,41 @@
         },
         "sort-packages": true
     },
+    "autoload": {
+        "psr-4": {
+            "Todora\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Todora\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "replace": {
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php71": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-php56": "*"
+    },
     "extra": {
-        "symfony-app-dir": "app",
-        "symfony-bin-dir": "bin",
-        "symfony-var-dir": "var",
-        "symfony-web-dir": "public",
-        "symfony-tests-dir": "tests",
-        "symfony-assets-install": "relative"
+        "symfony": {
+            "id": "01C10NFZ58ZFRX8P52RTNPXNB0",
+            "allow-contrib": false
+        }
     }
 }

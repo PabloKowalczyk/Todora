@@ -4,87 +4,59 @@ declare(strict_types=1);
 
 namespace Todora;
 
-use Symfony\Component\HttpKernel\Kernel as BaseKernel;
+use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Kernel as BaseKernel;
+use Symfony\Component\Routing\RouteCollectionBuilder;
 
-final class Kernel extends BaseKernel
+class Kernel extends BaseKernel
 {
-    private $cacheDir;
-
-    public function __construct($environment, $debug)
-    {
-        date_default_timezone_set("UTC");
-
-        parent::__construct($environment, $debug);
-    }
-
-    public function registerBundles()
-    {
-        $bundles = [
-            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new \Symfony\Bundle\SecurityBundle\SecurityBundle(),
-            new \Symfony\Bundle\TwigBundle\TwigBundle(),
-            new \Symfony\Bundle\MonologBundle\MonologBundle(),
-            new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new \League\Tactician\Bundle\TacticianBundle(),
-            new \Snc\RedisBundle\SncRedisBundle()
-        ];
-
-        if (in_array($this->getEnvironment(), ["dev", "test"], true)) {
-            $bundles[] = new \Symfony\Bundle\DebugBundle\DebugBundle();
-            $bundles[] = new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-            $bundles[] = new \Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
-            
-            if ("dev" === $this->getEnvironment()) {
-                $bundles[] = new \Matthimatiker\OpcacheBundle\MatthimatikerOpcacheBundle();
-                $bundles[] = new \Pixers\DoctrineProfilerBundle\PixersDoctrineProfilerBundle();
-            }
-        }
-
-        return $bundles;
-    }
-
-    public function getRootDir()
-    {
-        return __DIR__ . "/../app";
-    }
+    use MicroKernelTrait;
+    private const CONFIG_EXTS = '.{php,xml,yaml,yml}';
 
     public function getCacheDir()
     {
-        if ($this->cacheDir === null) {
-            $this->cacheDir = "{$this->getVarDirectory()}/cache/{$this->getEnvironment()}";
-        }
-
-        return $this->cacheDir;
+        return $this->getProjectDir() . '/var/cache/' . $this->environment;
     }
 
     public function getLogDir()
     {
-        return "{$this->getVarDirectory()}/logs";
+        return $this->getProjectDir() . '/var/log';
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader)
+    public function registerBundles()
     {
-        $loader->load("{$this->getRootDir()}/config/config_{$this->getEnvironment()}.yml");
-    }
-
-    protected function getKernelParameters()
-    {
-        return array_merge(
-            parent::getKernelParameters(),
-            [
-                "kernel.var_root_dir" => $this->getVarDirectory()
-            ]
-        );
-    }
-
-    private function getVarDirectory()
-    {
-        if ($this->getEnvironment() === "dev") {
-            return "/dev/shm/todora";
+        $contents = require $this->getProjectDir() . '/config/bundles.php';
+        foreach ($contents as $class => $envs) {
+            if (isset($envs['all']) || isset($envs[$this->environment])) {
+                yield new $class();
+            }
         }
+    }
 
-        return dirname(__DIR__) . "/var";
+    protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader)
+    {
+        $container->setParameter('container.autowiring.strict_mode', true);
+        $container->setParameter('container.dumper.inline_class_loader', true);
+        $confDir = $this->getProjectDir() . '/config';
+        $loader->load($confDir . '/packages/*' . self::CONFIG_EXTS, 'glob');
+        if (is_dir($confDir . '/packages/' . $this->environment)) {
+            $loader->load($confDir . '/packages/' . $this->environment . '/**/*' . self::CONFIG_EXTS, 'glob');
+        }
+        $loader->load($confDir . '/services' . self::CONFIG_EXTS, 'glob');
+        $loader->load($confDir . '/services_' . $this->environment . self::CONFIG_EXTS, 'glob');
+    }
+
+    protected function configureRoutes(RouteCollectionBuilder $routes)
+    {
+        $confDir = $this->getProjectDir() . '/config';
+        if (is_dir($confDir . '/routes/')) {
+            $routes->import($confDir . '/routes/*' . self::CONFIG_EXTS, '/', 'glob');
+        }
+        if (is_dir($confDir . '/routes/' . $this->environment)) {
+            $routes->import($confDir . '/routes/' . $this->environment . '/**/*' . self::CONFIG_EXTS, '/', 'glob');
+        }
+        $routes->import($confDir . '/routes' . self::CONFIG_EXTS, '/', 'glob');
     }
 }

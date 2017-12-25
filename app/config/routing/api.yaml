@@ -1,7 +1,0 @@
-todora.api.project:
-    resource: "api/project.yaml"
-    prefix: /project
-
-todora.api.task:
-    resource: "api/task.yaml"
-    prefix: /task

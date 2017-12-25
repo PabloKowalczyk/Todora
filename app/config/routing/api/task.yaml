@@ -1,9 +1,0 @@
-todora.api.task.create:
-    defaults: { _controller: Todora\UserInterface\Web\Json\Task\CreateNewTaskAction }
-    path: /create
-    methods: POST
-
-todora.api.task.complete:
-    defaults: { _controller: Todora\UserInterface\Web\Json\Task\CompleteTaskAction }
-    path: /complete
-    methods: PATCH
