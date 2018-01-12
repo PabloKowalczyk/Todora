@@ -21,3 +21,4 @@
 .vagrant/
 .idea/
 ubuntu-*
+/vendor-bin/*/vendor/
