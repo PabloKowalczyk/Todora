@@ -1,0 +1,46 @@
+<?php
+
+declare(strict_types=1);
+
+$dir = __DIR__;
+
+$finder = PhpCsFixer\Finder::create()
+    ->in("{$dir}/src")
+    ->in("{$dir}/tests")
+    ->append(
+        [
+            __FILE__,
+            "{$dir}/public/index.php",
+            "{$dir}/bin/console",
+        ]
+    )
+;
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR2' => true,
+        '@Symfony' => true,
+        '@Symfony:risky' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'yoda_style' => false,
+        'concat_space' => ['spacing' => 'one'],
+        'combine_consecutive_issets' => true,
+        'combine_consecutive_unsets' => true,
+        'linebreak_after_opening_tag' => true,
+        'no_useless_else' => true,
+        'no_useless_return' => true,
+        'list_syntax' => ['syntax' => 'short'],
+        'ordered_class_elements' => true,
+        'declare_strict_types' => true,
+        'header_comment' => false,
+        'mb_str_functions' => true,
+        'native_function_invocation' => true,
+        'no_php4_constructor' => true,
+        'pow_to_exponentiation' => true,
+        'strict_comparison' => true,
+        'strict_param' => true,
+        'ternary_to_null_coalescing' => true,
+    ])
+    ->setRiskyAllowed(true)
+    ->setFinder($finder)
+;

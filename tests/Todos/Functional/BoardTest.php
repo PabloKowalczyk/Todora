@@ -20,7 +20,7 @@ class BoardTest extends WebTestCase
             [],
             [
                 'PHP_AUTH_USER' => 'admin',
-                'PHP_AUTH_PW'   => $_ENV['ADMIN_PASSWORD'],
+                'PHP_AUTH_PW' => $_ENV['ADMIN_PASSWORD'],
             ]
         );
 
