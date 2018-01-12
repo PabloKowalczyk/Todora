@@ -9,17 +9,10 @@ services:
         autoconfigure: true
         public: false
 
-    League\Tactician\CommandBus: "@tactician.commandbus.default"
+    Todora\Todos\:
+        resource: '../src/Todos/*'
+        exclude: '../src/Todos/{UserInterface,Application/Command}'
 
-    Todora\:
-        resource: '../src/*'
-        exclude: '../src/{UserInterface,Application/Command}'
-
-    Todora\UserInterface\:
-        resource: '../src/UserInterface'
+    Todora\Todos\UserInterface\:
+        resource: '../src/Todos/UserInterface'
         public: true
-
-    Todora\Application\Command\:
-        resource: '../src/Application/Command/*Handler.php'
-        tags:
-            - { name: tactician.handler, typehints: true }

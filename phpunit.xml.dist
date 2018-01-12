@@ -25,11 +25,8 @@
     </php>
 
     <testsuites>
-        <testsuite name="unit-tests">
-            <directory>tests/Unit</directory>
-        </testsuite>
-        <testsuite name="functional-tests">
-            <directory>tests/Functional</directory>
+        <testsuite name="todos tests">
+            <directory>tests/Todos</directory>
         </testsuite>
     </testsuites>
 
@@ -38,4 +35,8 @@
             <directory>src</directory>
         </whitelist>
     </filter>
+
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+    </listeners>
 </phpunit>

@@ -1,5 +1,4 @@
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    paths:
-        '%kernel.project_dir%/resources/templates/Todora': Todora
+    default_path: '%kernel.project_dir%/resources/templates'

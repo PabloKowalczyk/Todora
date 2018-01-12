@@ -1,24 +1,4 @@
 todora.board.index:
-    controller: Todora\UserInterface\Web\Controller\BoardController:indexAction
+    controller: Todora\Todos\UserInterface\BoardAction
     methods: GET
     path: /
-
-todora.api.project.create:
-    defaults: { _controller: Todora\UserInterface\Web\Json\Project\CreateNewProjectAction }
-    path: /project/create
-    methods: POST
-
-todora.api.project.rename:
-    defaults: { _controller: Todora\UserInterface\Web\Json\Project\RenameProjectAction }
-    path: /project/rename
-    methods: POST
-
-todora.api.task.create:
-    defaults: { _controller: Todora\UserInterface\Web\Json\Task\CreateNewTaskAction }
-    path: /task/create
-    methods: POST
-
-todora.api.task.complete:
-    defaults: { _controller: Todora\UserInterface\Web\Json\Task\CompleteTaskAction }
-    path: /task/complete
-    methods: PATCH
