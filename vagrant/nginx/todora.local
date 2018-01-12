@@ -1,7 +1,7 @@
 server {
     listen 80;
 
-    server_name todora.dev;
+    server_name todora.local;
 
     return 301 https://$host$request_uri;
 }
@@ -9,11 +9,11 @@ server {
 server {
     listen 443 ssl http2;
 
-    server_name todora.dev;
+    server_name todora.local;
     root /vagrant/public;
 
-    ssl_certificate /etc/nginx/ssl/todora.dev.crt;
-    ssl_certificate_key /etc/nginx/ssl/todora.dev.key;
+    ssl_certificate /etc/nginx/ssl/todora.local.crt;
+    ssl_certificate_key /etc/nginx/ssl/todora.local.key;
 
     location / {
         # try to serve file directly, fallback to index.php
@@ -24,7 +24,7 @@ server {
     # This rule should only be placed on your development environment
     # In production, don't include this and don't deploy app_dev.php or config.php
     location ~ ^/index\.php(/|$) {
-        fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;
         # When you are using symlinks to link the document root to the

@@ -6,8 +6,8 @@ Vagrant.configure("2") do |config|
 
     config.vm.network :private_network, ip: "192.168.3.14"
 
-    config.vm.hostname = "todora.dev"
-    config.hostsupdater.aliases = ["stage.todora.dev"]
+    config.vm.hostname = "todora.local"
+    config.hostsupdater.aliases = ["stage.todora.local"]
 
     config.vm.synced_folder ".", "/vagrant",
         mount_options: ["actimeo=1"],

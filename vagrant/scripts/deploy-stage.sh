@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DEPLOY_TARGET="/var/www/stage.todora.dev";
+DEPLOY_TARGET="/var/www/stage.todora.local";
 
 sudo mkdir -p "$DEPLOY_TARGET" &&
 echo "- directory '$DEPLOY_TARGET' created for deploy." &&
@@ -16,7 +16,7 @@ rsync -az \
     --exclude="public/src/.sass-cache" \
     --exclude="var/sessions/dev" \
     /vagrant/ \
-    /var/www/stage.todora.dev &&
+    /var/www/stage.todora.local &&
 echo "- rsync completed" &&
 
 (cd "$DEPLOY_TARGET" && composer install -a --no-dev --no-scripts -n -q) &&
