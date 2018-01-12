@@ -47,15 +47,6 @@
             "ref": "2ea6070ecf365f9a801ccaed4b31d4a3b7af5693"
         }
     },
-    "doctrine/doctrine-migrations-bundle": {
-        "version": "1.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.2",
-            "ref": "c1431086fec31f17fbcfe6d6d7e92059458facc1"
-        }
-    },
     "doctrine/inflector": {
         "version": "v1.2.0"
     },
@@ -64,9 +55,6 @@
     },
     "doctrine/lexer": {
         "version": "v1.0.1"
-    },
-    "doctrine/migrations": {
-        "version": "v1.6.2"
     },
     "doctrine/orm": {
         "version": "v2.5.13"
@@ -100,12 +88,6 @@
     },
     "matthimatiker/opcache-bundle": {
         "version": "0.7.0"
-    },
-    "ocramius/package-versions": {
-        "version": "1.2.0"
-    },
-    "ocramius/proxy-manager": {
-        "version": "2.2.0"
     },
     "paragonie/random_compat": {
         "version": "v2.0.11"
@@ -356,13 +338,7 @@
     "twig/twig": {
         "version": "v2.4.4"
     },
-    "zendframework/zend-code": {
-        "version": "3.3.0"
-    },
     "zendframework/zend-diactoros": {
         "version": "1.6.1"
-    },
-    "zendframework/zend-eventmanager": {
-        "version": "3.2.0"
     }
 }
