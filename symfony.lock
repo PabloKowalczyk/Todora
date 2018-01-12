@@ -1,4 +1,7 @@
 {
+    "bamarni/composer-bin-plugin": {
+        "version": "v1.2.0"
+    },
     "beberlei/assert": {
         "version": "v2.8.1"
     },
