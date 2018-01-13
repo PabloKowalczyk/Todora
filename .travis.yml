@@ -20,6 +20,7 @@ env:
         - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-progress --no-suggest --prefer-dist"
 
 before_install:
+    - pecl install apcu-5.1.9
     - composer self-update
 
 install:
