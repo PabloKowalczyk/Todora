@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b5c4d04faa6497325b0b007cb3aaa10",
+    "content-hash": "ae3eb80b6e496103bb70924b98030bbf",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -4215,6 +4215,71 @@
                 }
             ],
             "description": "Symfony CssSelector Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-01-03T07:38:00+00:00"
+        },
+        {
+            "name": "symfony/debug-bundle",
+            "version": "v4.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/debug-bundle.git",
+                "reference": "3188f67995b0b54ca0600c68dac86ae822229a97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/debug-bundle/zipball/3188f67995b0b54ca0600c68dac86ae822229a97",
+                "reference": "3188f67995b0b54ca0600c68dac86ae822229a97",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "php": "^7.1.3",
+                "symfony/http-kernel": "~3.4|~4.0",
+                "symfony/twig-bridge": "~3.4|~4.0",
+                "symfony/var-dumper": "~3.4|~4.0"
+            },
+            "conflict": {
+                "symfony/dependency-injection": "<3.4"
+            },
+            "require-dev": {
+                "symfony/config": "~3.4|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/web-profiler-bundle": "~3.4|~4.0"
+            },
+            "suggest": {
+                "symfony/config": "For service container configuration",
+                "symfony/dependency-injection": "For using as a service from the container"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\DebugBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DebugBundle",
             "homepage": "https://symfony.com",
             "time": "2018-01-03T07:38:00+00:00"
         },

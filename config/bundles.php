@@ -13,4 +13,5 @@ return [
     Pixers\DoctrineProfilerBundle\PixersDoctrineProfilerBundle::class => ['dev' => true, 'test' => true],
     Snc\RedisBundle\SncRedisBundle::class => ['all' => true],
     Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
+    Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true, 'test' => true],
 ];
