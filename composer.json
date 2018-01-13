@@ -19,21 +19,18 @@
         "ramsey/uuid": "^3.7",
         "ramsey/uuid-doctrine": "^1.4",
         "roave/security-advisories": "dev-master",
-        "sensio/framework-extra-bundle": "^5.1",
         "snc/redis-bundle": "^2.0",
         "symfony/asset": "^4.0",
         "symfony/console": "^4.0",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.0",
         "symfony/lts": "^4@dev",
-        "symfony/psr-http-message-bridge": "^1.0",
         "symfony/security-bundle": "^4.0",
         "symfony/templating": "^4.0",
         "symfony/twig-bundle": "^4.0",
         "symfony/validator": "^4.0",
         "symfony/webpack-encore-pack": "^1.0",
-        "symfony/yaml": "^4.0",
-        "zendframework/zend-diactoros": "^1.6"
+        "symfony/yaml": "^4.0"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.2",
