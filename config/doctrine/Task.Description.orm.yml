@@ -1,8 +1,0 @@
-Todora\Domain\Task\Description:
-    type: embeddable
-    fields:
-        description:
-            type: string
-            length: 255
-            unique: false
-            nullable: false
