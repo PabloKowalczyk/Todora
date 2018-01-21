@@ -25,8 +25,8 @@
     </php>
 
     <testsuites>
-        <testsuite name="todos tests">
-            <directory>tests/Todos</directory>
+        <testsuite name="Todora tests">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
