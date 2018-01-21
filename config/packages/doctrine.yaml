@@ -21,6 +21,6 @@ doctrine:
         mappings:
            TodoraNamespace:
                type: yml
-               dir: '%kernel.project_dir%/config/doctrine'
+               dir: '%kernel.project_dir%/config/doctrine/todos'
                is_bundle: false
-               prefix: Todora\Domain
+               prefix: Todora\Todos\Domain\Model
