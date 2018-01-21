@@ -49,18 +49,6 @@ class DateTimeImmutableMicrosecondsTypeTest extends TestCase
         $this->assertDateTimeFormat('Y-m-d H:i:s', $platform);
     }
 
-    private function assertDateTimeFormat(string $format, AbstractPlatform $platform): void
-    {
-        $dateTime = new \DateTimeImmutable();
-        $dateTimeString = $dateTime->format($format);
-
-        $this->assertSame(
-            $dateTimeString,
-            $this->dateTimeMicrosecondsType
-                ->convertToDatabaseValue($dateTime, $platform)
-        );
-    }
-
     public function supportedPlatformProvider(): array
     {
         return [
@@ -76,5 +64,17 @@ class DateTimeImmutableMicrosecondsTypeTest extends TestCase
             'drizzle' => [new DrizzlePlatform()],
             'oracle' => [new OraclePlatform()],
         ];
+    }
+
+    private function assertDateTimeFormat(string $format, AbstractPlatform $platform): void
+    {
+        $dateTime = new \DateTimeImmutable();
+        $dateTimeString = $dateTime->format($format);
+
+        $this->assertSame(
+            $dateTimeString,
+            $this->dateTimeMicrosecondsType
+                ->convertToDatabaseValue($dateTime, $platform)
+        );
     }
 }
