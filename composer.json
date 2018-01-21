@@ -1,7 +1,7 @@
 {
     "type": "project",
-    "license": "proprietary",
-    "description": "Project description",
+    "license": "MIT",
+    "description": "Todora app",
     "require": {
         "php": ">=7.2.0",
         "php-64bit": ">=7.2.0",
