@@ -1,0 +1,7 @@
+Todora\Todos\Domain\Model\Timestamps:
+    type: embeddable
+    fields:
+        createdAt:
+            type: datetime_immutable
+        updatedAt:
+            type: datetime_immutable
