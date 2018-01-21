@@ -18,7 +18,7 @@ class DateTimeImmutableMicrosecondsTypeTest extends TestCase
 {
     private const TYPE_NAME = 'test_date_time_immutable_microseconds';
     /**
-     * @var DateTimeImmutableMicrosecondsType
+     * @var DateTimeImmutableMicrosecondsType|Type
      */
     private $dateTimeMicrosecondsType;
 

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Todora\Tests\Todos\Functional;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
 
 class BoardTest extends WebTestCase
 {
@@ -24,8 +25,10 @@ class BoardTest extends WebTestCase
             ]
         );
 
+        /** @var Response $response */
         $response = $client->getResponse();
 
+        $this->assertNotNull($response);
         $this->assertSame(200, $response->getStatusCode());
     }
 }
