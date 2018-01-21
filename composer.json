@@ -73,6 +73,7 @@
             "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
         },
         "todora:analyze": [
+            "@php vendor/bin/parallel-lint src tests",
             "@php vendor/bin/php-cs-fixer fix -v --diff --dry-run --ansi",
             "@php vendor/bin/phpmd src,tests text phpmd-ruleset.xml",
             "@php vendor/bin/phpcpd src tests"
