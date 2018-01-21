@@ -22,3 +22,4 @@
 .idea/
 ubuntu-*
 /vendor-bin/*/vendor/
+.php_cs.cache
