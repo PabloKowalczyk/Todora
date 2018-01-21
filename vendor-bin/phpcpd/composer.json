@@ -1,0 +1,5 @@
+{
+    "require-dev": {
+        "sebastian/phpcpd": "^3.0"
+    }
+}
