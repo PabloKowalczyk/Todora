@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     config.vm.provider "virtualbox" do |vb|
         vb.memory = "1536"
         vb.cpus = 4
-        vb.name = "todora.dev"
+        vb.name = "todora.local"
     end
 
     config.vm.provision "shell", path: "vagrant/apt.sh"
