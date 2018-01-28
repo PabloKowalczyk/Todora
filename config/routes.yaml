@@ -1,4 +1,4 @@
-todora.board.index:
-    controller: Todora\Todos\UserInterface\BoardAction
+todora.home:
+    controller: Todora\Todos\UserInterface\HomeAction
     methods: GET
     path: /

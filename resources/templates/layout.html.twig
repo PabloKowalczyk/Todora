@@ -10,17 +10,43 @@
 
         {#<link rel="icon" type="image/png" sizes="any" href="{{ asset('favicon/favicon.png') }}">#}
 
-        <link rel="stylesheet" href="{{ asset("build/css/vendor.css") }}">
+        <link rel="stylesheet" href="{{ asset("build/css/vendor/bootstrap.css") }}">
         <link rel="stylesheet" href="{{ asset("build/css/todora.css") }}">
     </head>
     <body class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Todora</h1>
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-primary mb-3">
+            <a class="navbar-brand" href="{{ path('todora.home') }}">
+                Todora
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02"
+                    aria-controls="navbarTogglerDemo02"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <button type="button"
+                        class="navbar-btn ml-auto btn btn-outline-light"
+                        data-toggle="modal"
+                        data-target="#modal-login"
+                >
+                    Login
+                </button>
             </div>
-        </div>
+        </nav>
+
         <main>
             {% block content %}{% endblock %}
         </main>
+
+        {% block modal %}{% endblock %}
+
+        <script src="{{ asset('build/js/vendor/bootstrap.js') }}"></script>
     </body>
 </html>
