@@ -75,6 +75,9 @@
             "cache:clear": "symfony-cmd",
             "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
         },
+        "todora:cs-fix": [
+            "@php vendor/bin/php-cs-fixer fix -v --diff --ansi"
+        ],
         "todora:analyze": [
             "@php bin/console doctrine:schema:validate --ansi --skip-sync",
             "@php bin/console lint:twig resources/templates --ansi",
