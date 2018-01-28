@@ -79,6 +79,7 @@
             "@php bin/console doctrine:schema:validate --ansi --skip-sync",
             "@php bin/console lint:twig resources/templates --ansi",
             "@php bin/console lint:yaml config/ --ansi",
+            "@php vendor/bin/phinx test --ansi",
             "@php vendor/bin/parallel-lint src tests",
             "@php vendor/bin/php-cs-fixer fix -v --diff --dry-run --ansi",
             "@php vendor/bin/phpmd src,tests text phpmd-ruleset.xml",

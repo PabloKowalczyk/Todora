@@ -1,0 +1,27 @@
+paths:
+    migrations: resources/db/migrations/
+    seeds: resources/db/seeds/
+
+environments:
+    default_migration_table: phinx_migrations
+    default_database: dev
+
+    dev:
+        adapter: pgsql
+        host: 127.0.0.1
+        name: todora_dev
+        user: todora_dev
+        pass: todora_dev_password
+        port: 5432
+        charset: utf8
+        collation: utf8_unicode_ci
+
+    prod:
+        adapter: pgsql
+        host: '%%PHINX_DBHOST%%'
+        name: '%%PHINX_DBNAME%%'
+        user: '%%PHINX_DBUSER%%'
+        pass: '%%PHINX_DBPASS%%'
+        port: 5432
+        charset: utf8
+        collation: utf8_unicode_ci
