@@ -30,6 +30,7 @@ $env = $input->getParameterOption(['--env', '-e'], $_SERVER['APP_ENV'] ?? 'dev')
 $debug = ($_SERVER['APP_DEBUG'] ?? ('prod' !== $env)) && !$input->hasParameterOption(['--no-debug', '']);
 
 if ($debug && \class_exists(Debug::class)) {
+    \umask(0000);
     Debug::enable();
 }
 
