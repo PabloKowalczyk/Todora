@@ -96,7 +96,7 @@
             "@php vendor/bin/php-cs-fixer fix -v --diff --dry-run --ansi",
             "@php vendor/bin/phpmd src,tests text phpmd-ruleset.xml",
             "@php vendor/bin/phpcpd src tests",
-            "@php vendor/bin/phpstan analyse -l 7 --no-progress --ansi src tests"
+            "@php vendor/bin/phpstan analyse -l 7 -c phpstan.neon --no-progress --ansi src tests"
         ],
         "post-install-cmd": [
             "@auto-scripts"

@@ -1,0 +1,4 @@
+parameters:
+	excludes_analyse:
+	    # PHPStan reports it wrong
+		- %rootDir%/../../../../../tests/Traits/*.php
