@@ -3,4 +3,5 @@
 (cd /vagrant && composer install -o -q -n --prefer-dist);
 (cd /vagrant && composer bin all install -a -q -n --prefer-dist);
 (cd /vagrant && composer todora:migrate:dev -q -n);
+(cd /vagrant && composer todora:migrate:test -q -n);
 

@@ -78,9 +78,11 @@
             "cache:clear": "symfony-cmd",
             "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
         },
-        "todora:migrate:dev": [
-            "@php vendor/bin/phinx migrate -e dev --ansi",
+        "todora:migrate:test": [
             "@php vendor/bin/phinx migrate -e test --ansi"
+        ],
+        "todora:migrate:dev": [
+            "@php vendor/bin/phinx migrate -e dev --ansi"
         ],
         "todora:cs-fix": [
             "@php vendor/bin/php-cs-fixer fix -v --diff --ansi"
