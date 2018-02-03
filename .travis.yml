@@ -2,6 +2,14 @@ language: php
 
 sudo: false
 
+dist: trusty
+
+addons:
+    postgresql: "9.6"
+
+services:
+    - postgresql
+
 git:
     depth: 1
 
@@ -19,6 +27,10 @@ env:
     global:
         - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-progress --no-suggest --prefer-dist"
 
+before_script:
+    - psql -c "CREATE DATABASE todora_test;" -U postgres
+    - psql -c "CREATE USER todora_test WITH PASSWORD 'todora_test';" -U postgres
+
 before_install:
     - source .travis/xdebug.sh
     - xdebug-disable
@@ -30,6 +42,7 @@ install:
     - travis_retry composer bin all install -a $DEFAULT_COMPOSER_FLAGS
 
 script:
+    - composer todora:migrate:test
     - composer todora:analyze
     - vendor/bin/phpunit
 
