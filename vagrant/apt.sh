@@ -22,4 +22,6 @@ apt-get install git \
     htop \
     curl \
     build-essential \
+    postgresql \
+    postgresql-contrib \
     redis-server -y > /dev/null;

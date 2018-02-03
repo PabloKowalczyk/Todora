@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-DB_USER="todora_dev";
-DB_PASS="todora_dev_password";
+DB_USER="$1";
+DB_PASS="$2"
 
 export DEBIAN_FRONTEND=noninteractive;
-
-apt-get install postgresql postgresql-contrib -y > /dev/null;
 
 USER_EXIST=$(sudo -u postgres psql -A -t -c "SELECT 1 FROM pg_roles WHERE rolname LIKE '$DB_USER'");
 
