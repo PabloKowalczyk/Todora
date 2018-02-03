@@ -1,0 +1,17 @@
+parameters:
+    pass: '$argon2i$v=19$m=1024,t=2,p=2$RGtJUkxnZXpUcm1XV2xYVw$Vx426bNI5gCRirL7sVqqpIvC8Tlv/onAW/U00P08xVU'
+
+Todora\SharedKernel\Domain\TodoraId:
+    userId:
+        __factory:
+            create: []
+
+Todora\Todos\Domain\Model\User\User:
+    user:
+        __factory:
+            create:
+                $id: '@userId'
+                $email: 'admin@example.com'
+                # Password is 'admin'
+                $password: "<{pass}>"
+                $username: 'admin'
