@@ -40,7 +40,6 @@ before_install:
     - cd libsodium && sudo ./configure && sudo make check && sudo make install && cd ..
     - yes '' | pecl install -f apcu-5.1.9
     - yes '' | pecl install -f libsodium
-    - echo "extension=sodium.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
     - composer self-update
 
 install:
