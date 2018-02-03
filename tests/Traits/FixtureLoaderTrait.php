@@ -17,7 +17,7 @@ trait FixtureLoaderTrait
         $loader = $container->get('fidry_alice_data_fixtures.loader.doctrine');
         $fixturesPath = $container->getParameter('kernel.project_dir');
 
-        $fixturePath = "{$fixturesPath}/resources/fixtures/${name}.yaml";
+        $fixturePath = "{$fixturesPath}/resources/fixtures/{$name}.yaml";
 
         $loader->load([$fixturePath]);
     }
