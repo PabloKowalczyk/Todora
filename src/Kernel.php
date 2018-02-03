@@ -15,15 +15,16 @@ class Kernel extends BaseKernel
     use MicroKernelTrait;
 
     private const CONFIG_EXTS = '.{php,xml,yaml,yml}';
+    private const SHM_PATH = '/dev/shm';
 
     public function getCacheDir()
     {
-        return $this->getProjectDir() . '/var/cache/' . $this->environment;
+        return $this->getVarDir() . '/var/cache/' . $this->environment;
     }
 
     public function getLogDir()
     {
-        return $this->getProjectDir() . '/var/log';
+        return $this->getVarDir() . '/var/log';
     }
 
     public function registerBundles()
@@ -64,5 +65,23 @@ class Kernel extends BaseKernel
         }
 
         $routes->import($confDir . '/routes' . self::CONFIG_EXTS, '/', 'glob');
+    }
+
+    private function getVarDir(): string
+    {
+        $useShm = \in_array(
+            $this->environment,
+            ['dev', 'test'],
+            true
+        );
+
+        if ($useShm
+            && \file_exists(self::SHM_PATH)
+            && \is_writable(self::SHM_PATH)
+        ) {
+            return '/dev/shm/todora';
+        }
+
+        return $this->getProjectDir();
     }
 }
