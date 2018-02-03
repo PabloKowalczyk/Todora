@@ -30,15 +30,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <button type="button"
-                        class="navbar-btn ml-auto btn btn-outline-light"
-                        data-toggle="modal"
-                        data-target="#modal-login"
-                >
-                    Login
-                </button>
-            </div>
+            {% if app.request.attributes.get('_route') != 'todora.login' and not is_granted('IS_AUTHENTICATED_FULLY') %}
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <button type="button"
+                            class="navbar-btn ml-auto btn btn-info"
+                            data-toggle="modal"
+                            data-target="#modal-login"
+                    >
+                        Login
+                    </button>
+                </div>
+            {% endif %}
         </nav>
 
         <main>
