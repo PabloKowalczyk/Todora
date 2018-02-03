@@ -2,28 +2,33 @@
 # http://symfony.com/doc/current/security.html
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Todora\Todos\Infrastructure\Symfony\UserProvider\User:
+            algorithm: argon2i
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        in_memory:
-            memory:
-                users:
-                    admin:
-                        password: "%env(ADMIN_PASSWORD)%"
-                        roles: 'ROLE_ADMIN'
+        dbal:
+            id: Todora\Todos\Infrastructure\Symfony\UserProvider\DbalUserProvider
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            pattern: ^/(_(profiler|wdt))/
             security: false
 
-        main:
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            http_basic: ~
-
+        board:
+            anonymous: ~
+            provider: dbal
+            form_login:
+                login_path: todora.login
+                check_path: todora.login
+                always_use_default_target_path: true
+                default_target_path: todora.board
+                csrf_token_generator: security.csrf.token_manager
             logout_on_user_change: true
+            logout:
+                path: todora.logout
+                target: todora.home
 
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
-            #form_login: ~
+    access_control:
+        - { path: ^/board, roles: ROLE_USER }

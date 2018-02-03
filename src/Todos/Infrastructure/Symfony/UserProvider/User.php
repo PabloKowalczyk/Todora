@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Todora\Todos\Infrastructure\Doctrine\Dbal;
+namespace Todora\Todos\Infrastructure\Symfony\UserProvider;
 
 use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -76,6 +76,9 @@ class User implements UserInterface, EquatableInterface
      */
     public function isEqualTo(UserInterface $user): bool
     {
-        return $this->password === $user->getPassword() && $this->email === $user->getUsername();
+        return ($user instanceof self)
+            && $this->password === $user->getPassword()
+            && $this->email === $user->getUsername()
+        ;
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Todora\Todos\Infrastructure\Doctrine\Dbal;
+namespace Todora\Todos\Infrastructure\Symfony\UserProvider;
 
 use Doctrine\DBAL\Connection;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
@@ -53,7 +53,7 @@ class DbalUserProvider implements UserProviderInterface
         return new User(
             $userData['email'],
             $userData['password'],
-            json_decode($userData['roles'])
+            \json_decode($userData['roles'])
         );
     }
 
