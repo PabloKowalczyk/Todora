@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Todora\Tests\Todos\Functional;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
 use Todora\Tests\Traits\FixtureLoaderTrait;
 
 class LoginTest extends WebTestCase
@@ -19,8 +20,11 @@ class LoginTest extends WebTestCase
         $this->loadFixture('user');
 
         $crawler = $client->request('get', 'login');
+
+        /** @var Response $response */
         $response = $client->getResponse();
 
+        $this->assertNotNull($response);
         $this->assertSame(200, $response->getStatusCode());
 
         $formNode = $crawler->filter('#login-form');
@@ -28,8 +32,10 @@ class LoginTest extends WebTestCase
         $form = $formNode->form(['_username' => 'admin@example.com', '_password' => 'admin']);
 
         $crawler = $client->submit($form);
+        /** @var Response $response */
         $response = $client->getResponse();
 
+        $this->assertNotNull($response);
         $this->assertSame(302, $response->getStatusCode());
 
         $crawler = $client->followRedirect();
