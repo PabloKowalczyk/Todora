@@ -12,3 +12,7 @@ todora.logout:
     methods: GET
     path: /logout
 
+todora.board:
+    controller: Todora\Todos\UserInterface\BoardAction
+    methods: GET
+    path: /board
