@@ -1,6 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+$dbDev = "todora_dev";
+$dbTest = "todora_test";
+
 Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/xenial64"
 
@@ -31,7 +34,17 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: "vagrant/php.sh"
     config.vm.provision "shell", path: "vagrant/ruby.sh"
     config.vm.provision "shell", path: "vagrant/nodejs.sh"
-    config.vm.provision "shell", path: "vagrant/pgsql.sh"
+
+    config.vm.provision "shell" do |s|
+        s.path = "vagrant/create-database.sh"
+        s.args = [$dbDev, $dbDev]
+    end
+
+    config.vm.provision "shell" do |s|
+        s.path = "vagrant/create-database.sh"
+        s.args = [$dbTest, $dbTest]
+    end
+
     config.vm.provision "shell", path: "vagrant/phars.sh", privileged: false
     config.vm.provision "shell", path: "vagrant/provision-project.sh", privileged: false
 end
