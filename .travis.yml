@@ -26,6 +26,7 @@ matrix:
 env:
     global:
         - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-progress --no-suggest --prefer-dist"
+        - DATABASE_URL="pgsql://todora_test:todora_test@127.0.0.1:5432/todora_dev?charset=UTF-8&amp;serverVersion=9.6"
 
 before_script:
     - psql -c "CREATE DATABASE todora_test;" -U postgres
