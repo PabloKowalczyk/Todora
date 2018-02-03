@@ -35,6 +35,8 @@ before_install:
     - source .travis/xdebug.sh
     - xdebug-disable
     - yes '' | pecl install -f apcu-5.1.9
+    - yes '' | pecl install -f libsodium
+    - echo "extension=sodium.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
     - composer self-update
 
 install:
