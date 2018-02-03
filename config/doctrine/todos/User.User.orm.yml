@@ -1,0 +1,24 @@
+Todora\Todos\Domain\Model\User\User:
+    type: entity
+    table: users
+    id:
+        id:
+            columns: id
+            type: uuid
+            generator:
+                strategy: NONE
+    fields:
+        email:
+            type: string
+        password:
+            type: string
+        username:
+            type: string
+        roles:
+            type: json
+        verified:
+            type: boolean
+    embedded:
+        timestamps:
+            class: Todora\Todos\Domain\Model\Timestamps
+            columnPrefix: false
