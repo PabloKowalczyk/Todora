@@ -2,3 +2,13 @@ todora.home:
     controller: Todora\Todos\UserInterface\HomeAction
     methods: GET
     path: /
+
+todora.login:
+    controller: Todora\Todos\UserInterface\SignInAction
+    methods: [GET, POST]
+    path: /login
+
+todora.logout:
+    methods: GET
+    path: /logout
+
