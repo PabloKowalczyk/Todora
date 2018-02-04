@@ -77,15 +77,6 @@
     "fzaninotto/faker": {
         "version": "v1.7.1"
     },
-    "hautelook/alice-bundle": {
-        "version": "1.4",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "1.4",
-            "ref": "3447d538661064626c782b1122a14defa48dc0b1"
-        }
-    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
