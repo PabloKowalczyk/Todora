@@ -1,12 +1,13 @@
 <?php
 
 declare(strict_types=1);
+
 use Phinx\Migration\AbstractMigration;
 
 class AddUsersTable extends AbstractMigration
 {
-    private const USERNAME_INDEX_NAME = 'user_username_lower';
-    private const TABLE_NAME = 'users';
+    public const USERNAME_INDEX_NAME = 'user_username_lower';
+    public const TABLE_NAME = 'users';
 
     /**
      * {@inheritdoc}
@@ -14,8 +15,9 @@ class AddUsersTable extends AbstractMigration
     public function up(): void
     {
         $usernameIndexName = self::USERNAME_INDEX_NAME;
+        $tableName = self::TABLE_NAME;
 
-        $table = $this->table(self::TABLE_NAME, ['id' => false, 'primary_key' => 'id']);
+        $table = $this->table($tableName, ['id' => false, 'primary_key' => 'id']);
 
         $table->addColumn('id', 'uuid');
         $table->addColumn(
@@ -58,7 +60,7 @@ class AddUsersTable extends AbstractMigration
 
         $table->create();
 
-        $this->query("CREATE INDEX {$usernameIndexName} ON users (LOWER(username))");
+        $this->query("CREATE INDEX {$usernameIndexName} ON {$tableName} (LOWER(username))");
     }
 
     public function down(): void
