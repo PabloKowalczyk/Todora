@@ -278,9 +278,6 @@
     "symfony/polyfill-intl-icu": {
         "version": "v1.6.0"
     },
-    "symfony/polyfill-mbstring": {
-        "version": "v1.6.0"
-    },
     "symfony/process": {
         "version": "v4.0.1"
     },

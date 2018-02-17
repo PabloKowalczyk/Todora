@@ -7,6 +7,7 @@
         "php-64bit": ">=7.2.0",
         "ext-apcu": ">=5.0.0",
         "ext-iconv": "*",
+        "ext-mbstring": ">=7.2.0",
         "ext-pdo_pgsql": ">=7.2.0",
         "ext-pgsql": ">=7.2.0",
         "beberlei/assert": "^2.8",
@@ -110,6 +111,7 @@
         "symfony/symfony": "*"
     },
     "replace": {
+        "symfony/polyfill-mbstring": "*",
         "symfony/polyfill-iconv": "*",
         "symfony/polyfill-php71": "*",
         "symfony/polyfill-php72": "*",
