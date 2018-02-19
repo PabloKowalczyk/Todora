@@ -25,11 +25,11 @@ class UniqueUsernameViewTest extends TestCase
         return [
             'unique' => [
                 'count' => 0,
-                'expectedUniqueness' => true
+                'expectedUniqueness' => true,
             ],
             'notUnique' => [
                 'count' => 1,
-                'expectedUniqueness' => false
+                'expectedUniqueness' => false,
             ],
         ];
     }
