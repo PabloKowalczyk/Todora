@@ -11,7 +11,7 @@ services:
 
     Todora\Todos\:
         resource: '../src/Todos/*'
-        exclude: '../src/Todos/{UserInterface,Application/Command}'
+        exclude: '../src/Todos/{UserInterface,Application/Command,Application/Query}'
 
     Todora\Todos\UserInterface\:
         resource: '../src/Todos/UserInterface'
