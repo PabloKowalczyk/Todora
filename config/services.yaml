@@ -16,3 +16,6 @@ services:
     Todora\Todos\UserInterface\:
         resource: '../src/Todos/UserInterface'
         public: true
+
+    Todora\Todos\Application\Query\UniqueUsernameQueryInterface:
+        alias: Todora\Todos\Infrastructure\Doctrine\DbalUniqueUsernameQuery
