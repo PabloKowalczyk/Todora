@@ -4088,16 +4088,16 @@
         },
         {
             "name": "dama/doctrine-test-bundle",
-            "version": "v5.0.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmaicher/doctrine-test-bundle.git",
-                "reference": "ccdea2ce9fec5048385d1b9b5bc7c4c3f32ab48f"
+                "reference": "c02ff7a3e8502c3ed93b3f40354685e36b9a500a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmaicher/doctrine-test-bundle/zipball/ccdea2ce9fec5048385d1b9b5bc7c4c3f32ab48f",
-                "reference": "ccdea2ce9fec5048385d1b9b5bc7c4c3f32ab48f",
+                "url": "https://api.github.com/repos/dmaicher/doctrine-test-bundle/zipball/c02ff7a3e8502c3ed93b3f40354685e36b9a500a",
+                "reference": "c02ff7a3e8502c3ed93b3f40354685e36b9a500a",
                 "shasum": ""
             },
             "require": {
@@ -4141,7 +4141,7 @@
                 "symfony 2",
                 "tests"
             ],
-            "time": "2018-02-05T12:10:27+00:00"
+            "time": "2018-02-25T14:57:01+00:00"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -4563,12 +4563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "940eb3dbebd9bb2d82c94ecc896df8b19b9bd867"
+                "reference": "f3e52bf601a4224e2eb3ac8e833c129beff8abc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/940eb3dbebd9bb2d82c94ecc896df8b19b9bd867",
-                "reference": "940eb3dbebd9bb2d82c94ecc896df8b19b9bd867",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/f3e52bf601a4224e2eb3ac8e833c129beff8abc8",
+                "reference": "f3e52bf601a4224e2eb3ac8e833c129beff8abc8",
                 "shasum": ""
             },
             "conflict": {
@@ -4600,6 +4600,7 @@
                 "dompdf/dompdf": ">=0.6,<0.6.2",
                 "drupal/core": ">=8,<8.3.7",
                 "drupal/drupal": ">=8,<8.3.7",
+                "erusev/parsedown": "<=1.6.4",
                 "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.2|>=5.4,<5.4.10.1|>=2017.8,<2017.8.1.1",
                 "firebase/php-jwt": "<2",
                 "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
@@ -4659,7 +4660,7 @@
                 "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-                "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
+                "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
                 "titon/framework": ">=0,<9.9.99",
                 "twig/twig": "<1.20",
                 "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.22|>=8,<8.7.5",
@@ -4709,7 +4710,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-02-21T14:50:18+00:00"
+            "time": "2018-02-25T12:47:47+00:00"
         },
         {
             "name": "symfony/browser-kit",
