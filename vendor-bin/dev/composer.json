@@ -4,12 +4,12 @@
         "php-64bit": ">=7.2.0",
         "ext-iconv": "*",
         "friendsofphp/php-cs-fixer": "^2.10",
-        "jakub-onderka/php-parallel-lint": "^0.9.2",
+        "jakub-onderka/php-parallel-lint": "^1.0",
         "jakub-onderka/php-console-highlighter": "^0.3.2",
-        "sebastian/phpcpd": "^3.0",
+        "sebastian/phpcpd": "^4.0",
         "phpmd/phpmd": "^2.6",
         "phpstan/phpstan": "^0.9.1",
-        "phpunit/phpunit": "^6.5"
+        "phpunit/phpunit": "^7.0"
     },
     "replace": {
         "symfony/polyfill-php71": "*",
