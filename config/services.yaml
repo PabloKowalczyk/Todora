@@ -17,5 +17,10 @@ services:
         resource: '../src/Todos/UserInterface'
         public: true
 
+    Todora\Todos\Application\Command\:
+        resource: '../src/Todos/Application/Command/*Handler.php'
+        tags:
+            - { name: tactician.handler, typehints: true, bus: commandbus }
+
     Todora\Todos\Application\Query\UniqueUsernameQueryInterface:
         alias: Todora\Todos\Infrastructure\Doctrine\DbalUniqueUsernameQuery
