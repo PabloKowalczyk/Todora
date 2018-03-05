@@ -98,6 +98,9 @@
     "league/tactician-doctrine": {
         "version": "v1.1"
     },
+    "league/tactician-logger": {
+        "version": "v0.10.0"
+    },
     "matthimatiker/opcache-bundle": {
         "version": "0.7.0"
     },
