@@ -24,3 +24,10 @@ services:
 
     Todora\Todos\Application\Query\UniqueUsernameQueryInterface:
         alias: Todora\Todos\Infrastructure\Doctrine\DbalUniqueUsernameQuery
+
+    Todora\SharedKernel\Infrastructure\CommandBus\TacticianCommandBus:
+        arguments:
+            $commandBus: '@tactician.commandbus.commandbus'
+
+    Todora\SharedKernel\Application\CommandBusInterface:
+        alias: Todora\SharedKernel\Infrastructure\CommandBus\TacticianCommandBus
