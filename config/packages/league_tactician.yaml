@@ -1,6 +1,7 @@
 tactician:
+    default_bus: commandbus
     commandbus:
-        default:
+        commandbus:
             middleware:
                 - tactician.middleware.validator
                 - tactician.middleware.doctrine
