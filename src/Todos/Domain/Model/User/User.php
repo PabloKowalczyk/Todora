@@ -68,6 +68,7 @@ class User
         $this->verified = true;
 
         $this->timestamps
-            ->wasUpdated();
+            ->update()
+        ;
     }
 }

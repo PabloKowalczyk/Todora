@@ -22,7 +22,7 @@ final class Timestamps
         return new self(new \DateTimeImmutable(), new \DateTimeImmutable());
     }
 
-    public function wasUpdated(): void
+    public function update(): void
     {
         $this->updatedAt = new \DateTimeImmutable();
     }
