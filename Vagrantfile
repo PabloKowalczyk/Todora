@@ -32,7 +32,6 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell", path: "vagrant/ssl.sh"
     config.vm.provision "shell", path: "vagrant/nginx.sh"
     config.vm.provision "shell", path: "vagrant/php.sh"
-    config.vm.provision "shell", path: "vagrant/ruby.sh"
     config.vm.provision "shell", path: "vagrant/nodejs.sh"
 
     config.vm.provision "shell" do |s|
