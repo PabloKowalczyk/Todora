@@ -4,7 +4,7 @@ parameters:
 		- %rootDir%/../../../../../tests/Traits/*.php
 		- %rootDir%/../../../../../src/Todos/Infrastructure/Symfony/Validator/*Validator.php
 	symfony:
-		container_xml_path: var/cache/test/srcTestDebugProjectContainer.xml
+		container_xml_path: /dev/shm/todora/var/cache/test/srcTestDebugProjectContainer.xml
 
 includes:
     - vendor-bin/dev/vendor/phpstan/phpstan-phpunit/extension.neon
