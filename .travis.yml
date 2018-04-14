@@ -48,7 +48,7 @@ install:
 
 script:
     # this step is needed by syfmony-plugin for phpstan
-    - bin/console cache:warmup -e test
+    - php bin/console cache:warmup -e test
     - composer todora:migrate:test
     - composer todora:analyze
     - vendor/bin/phpunit
