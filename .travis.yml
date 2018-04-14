@@ -47,6 +47,8 @@ install:
     - travis_retry composer bin all install -a $DEFAULT_COMPOSER_FLAGS
 
 script:
+    # this step is needed by syfmony-plugin for phpstan
+    - bin/console cache:warmup -e test
     - composer todora:migrate:test
     - composer todora:analyze
     - vendor/bin/phpunit

@@ -3,3 +3,11 @@ parameters:
 	    # PHPStan reports it wrong
 		- %rootDir%/../../../../../tests/Traits/*.php
 		- %rootDir%/../../../../../src/Todos/Infrastructure/Symfony/Validator/*Validator.php
+	symfony:
+		container_xml_path: var/cache/test/srcTestDebugProjectContainer.xml
+
+includes:
+    - vendor-bin/dev/vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor-bin/dev/vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor-bin/dev/vendor/phpstan/phpstan-phpunit/strictRules.neon
+    - vendor-bin/dev/vendor/lookyman/phpstan-symfony/extension.neon
