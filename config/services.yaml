@@ -9,12 +9,12 @@ services:
         autoconfigure: true
         public: false
 
-    Todora\Todos\:
-        resource: '../src/Todos/*'
-        exclude: '../src/Todos/{UserInterface,Application/Command,Application/Query}'
+    Todora\:
+        resource: '../src/*'
+        exclude: '../src/*/UserInterface'
 
     Todora\Todos\UserInterface\:
-        resource: '../src/Todos/UserInterface'
+        resource: '../src/Todos/UserInterface/*'
         public: true
 
     Todora\Todos\Application\Command\:
@@ -22,12 +22,11 @@ services:
         tags:
             - { name: tactician.handler, typehints: true, bus: commandbus }
 
-    Todora\Todos\Application\Query\UniqueUsernameQueryInterface:
-        alias: Todora\Todos\Infrastructure\Doctrine\DbalUniqueUsernameQuery
-
     Todora\SharedKernel\Infrastructure\CommandBus\TacticianCommandBus:
         arguments:
             $commandBus: '@tactician.commandbus.commandbus'
+
+    Symfony\Component\Security\Core\Encoder\Argon2iPasswordEncoder: ~
 
     Todora\SharedKernel\Application\CommandBusInterface:
         alias: Todora\SharedKernel\Infrastructure\CommandBus\TacticianCommandBus
