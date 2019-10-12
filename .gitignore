@@ -18,9 +18,7 @@
 /public/build/
 ###< symfony/webpack-encore-pack ###
 
-.vagrant/
 .idea/
-ubuntu-*
 /vendor-bin/*/vendor/
 .php_cs.cache
 .docker
