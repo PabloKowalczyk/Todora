@@ -11,7 +11,7 @@
         "ext-pdo_pgsql": ">=7.2.0",
         "beberlei/assert": "^2.8",
         "doctrine/doctrine-bundle": "^1.6.10",
-        "doctrine/orm": "^2.5.11",
+        "doctrine/orm": "^2.6",
         "egulias/email-validator": "^2.1",
         "league/tactician-bundle": "^1.1",
         "league/tactician-doctrine": "^1.1",
