@@ -2,7 +2,7 @@ language: php
 
 sudo: false
 
-dist: trusty
+dist: bionic
 
 addons:
     postgresql: "9.6"
@@ -34,12 +34,7 @@ before_script:
 before_install:
     - source .travis/xdebug.sh
     - xdebug-disable
-    - sudo apt-get update -qq
-    - sudo apt-get install build-essential git -y
-    - git clone -b stable https://github.com/jedisct1/libsodium.git
-    - cd libsodium && sudo ./configure && sudo make check && sudo make install && cd ..
     - yes '' | pecl install -f apcu-5.1.9
-    - yes '' | pecl install -f libsodium
     - composer self-update
 
 install:
@@ -49,7 +44,7 @@ install:
 script:
     # this step is needed by syfmony-plugin for phpstan
     - php bin/console cache:warmup -e test
-    - composer todora:migrate:test
+    - composer todora:migrate:local
     - composer todora:analyze
     - vendor/bin/phpunit
 

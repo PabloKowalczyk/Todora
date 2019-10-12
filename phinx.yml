@@ -8,7 +8,7 @@ environments:
 
     dev:
         adapter: pgsql
-        host: 127.0.0.1
+        host: postgres
         name: todora_dev
         user: todora_dev
         pass: todora_dev
@@ -17,6 +17,16 @@ environments:
         collation: utf8_unicode_ci
 
     test:
+        adapter: pgsql
+        host: postgres_test
+        name: todora_test
+        user: todora_test
+        pass: todora_test
+        port: 5432
+        charset: utf8
+        collation: utf8_unicode_ci
+
+    local:
         adapter: pgsql
         host: 127.0.0.1
         name: todora_test

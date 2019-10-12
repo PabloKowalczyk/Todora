@@ -9,10 +9,9 @@
         "ext-iconv": "*",
         "ext-mbstring": ">=7.2.0",
         "ext-pdo_pgsql": ">=7.2.0",
-        "ext-pgsql": ">=7.2.0",
         "beberlei/assert": "^2.8",
         "doctrine/doctrine-bundle": "^1.6.10",
-        "doctrine/orm": "^2.5.11",
+        "doctrine/orm": "^2.6",
         "egulias/email-validator": "^2.1",
         "league/tactician-bundle": "^1.1",
         "league/tactician-doctrine": "^1.1",
@@ -85,6 +84,9 @@
         ],
         "todora:migrate:dev": [
             "@php vendor/bin/phinx migrate -e dev --ansi"
+        ],
+        "todora:migrate:local": [
+            "@php vendor/bin/phinx migrate -e local --ansi"
         ],
         "todora:cs-fix": [
             "@php vendor/bin/php-cs-fixer fix -v --diff --ansi"

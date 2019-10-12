@@ -25,7 +25,6 @@ security:
                 always_use_default_target_path: true
                 default_target_path: todora.board
                 csrf_token_generator: security.csrf.token_manager
-            logout_on_user_change: true
             logout:
                 path: todora.logout
                 target: todora.home

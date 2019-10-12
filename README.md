@@ -2,7 +2,7 @@ TodoraApp
 ==============
 
 ## How to run it?
-`Vagrant` is required.
-* go to `Todora` root directory
-* run `vagrant up`
-* go to `https://todora.local/` in the browser
+`docker-compose` is required.
+* go to `Todora`'s root directory
+* run `docker-compose up`
+* go to `https://localhost:8200/` in the browser

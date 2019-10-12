@@ -26,7 +26,7 @@ framework:
         json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'
 
     validation:
-        strict_email: true
+        email_validation_mode: strict
         mapping:
             paths:
                 - '%kernel.project_dir%/config/validation'
