@@ -8,7 +8,7 @@ environments:
 
     dev:
         adapter: pgsql
-        host: 127.0.0.1
+        host: postgres
         name: todora_dev
         user: todora_dev
         pass: todora_dev
@@ -18,7 +18,7 @@ environments:
 
     test:
         adapter: pgsql
-        host: 127.0.0.1
+        host: postgres_test
         name: todora_test
         user: todora_test
         pass: todora_test
