@@ -26,6 +26,16 @@ environments:
         charset: utf8
         collation: utf8_unicode_ci
 
+    local:
+        adapter: pgsql
+        host: 127.0.0.1
+        name: todora_test
+        user: todora_test
+        pass: todora_test
+        port: 5432
+        charset: utf8
+        collation: utf8_unicode_ci
+
     prod:
         adapter: pgsql
         host: '%%PHINX_DBHOST%%'
