@@ -85,6 +85,9 @@
         "todora:migrate:dev": [
             "@php vendor/bin/phinx migrate -e dev --ansi"
         ],
+        "todora:migrate:local": [
+            "@php vendor/bin/phinx migrate -e local --ansi"
+        ],
         "todora:cs-fix": [
             "@php vendor/bin/php-cs-fixer fix -v --diff --ansi"
         ],
