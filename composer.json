@@ -3,12 +3,12 @@
     "license": "MIT",
     "description": "Todora app",
     "require": {
-        "php": ">=7.2.0",
-        "php-64bit": ">=7.2.0",
+        "php": "^7.3",
+        "php-64bit": "^7.3",
         "ext-apcu": ">=5.0.0",
         "ext-iconv": "*",
-        "ext-mbstring": ">=7.2.0",
-        "ext-pdo_pgsql": ">=7.2.0",
+        "ext-mbstring": "*",
+        "ext-pdo_pgsql": "*",
         "beberlei/assert": "^2.8",
         "doctrine/doctrine-bundle": "^1.6.10",
         "doctrine/orm": "^2.6",
@@ -40,7 +40,7 @@
         "doctrine/data-fixtures": "^1.3",
         "doctrine/doctrine-fixtures-bundle": "^3.0",
         "fzaninotto/faker": "^1.7",
-        "matthimatiker/opcache-bundle": "^0.7",
+        "pablok/cache-stats-bundle": "^0.1.0",
         "pds/skeleton": "^1.0",
         "pixers/doctrine-profiler-bundle": "^1.0",
         "roave/security-advisories": "dev-master",
@@ -60,7 +60,7 @@
         },
         "sort-packages": true,
         "platform": {
-            "php": "7.2.1"
+            "php": "7.3"
         }
     },
     "autoload": {
@@ -112,17 +112,19 @@
         "symfony/symfony": "*"
     },
     "replace": {
+        "paragonie/random_compat": "^9",
         "symfony/polyfill-mbstring": "*",
         "symfony/polyfill-iconv": "*",
         "symfony/polyfill-php71": "*",
         "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
         "symfony/polyfill-php70": "*",
         "symfony/polyfill-php56": "*"
     },
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "4.1.*"
+            "require": "4.3.*"
         }
     }
 }
