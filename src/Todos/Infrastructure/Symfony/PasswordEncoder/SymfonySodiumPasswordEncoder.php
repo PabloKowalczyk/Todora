@@ -20,7 +20,7 @@ final class SymfonySodiumPasswordEncoder implements PasswordHasherInterface
     public function hash(string $password): string
     {
         return $this->argon2iPasswordEncoder
-            ->encodePassword($password, '')
+            ->encodePassword($password, null)
         ;
     }
 }
