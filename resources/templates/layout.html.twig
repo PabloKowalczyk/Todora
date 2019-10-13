@@ -10,8 +10,8 @@
 
         {#<link rel="icon" type="image/png" sizes="any" href="{{ asset('favicon/favicon.png') }}">#}
 
-        <link rel="stylesheet" href="{{ asset("build/css/vendor/bootstrap.css") }}">
-        <link rel="stylesheet" href="{{ asset("build/css/todora.css") }}">
+        {{ encore_entry_link_tags('css/vendor/bootstrap') }}
+        {{ encore_entry_link_tags('css/todora') }}
     </head>
     <body class="container">
         <nav class="navbar navbar-expand-lg  navbar-dark bg-primary mb-3">
@@ -49,6 +49,6 @@
 
         {% block modal %}{% endblock %}
 
-        <script src="{{ asset('build/js/vendor/bootstrap.js') }}"></script>
+        {{ encore_entry_script_tags('js/vendor/bootstrap') }}
     </body>
 </html>
