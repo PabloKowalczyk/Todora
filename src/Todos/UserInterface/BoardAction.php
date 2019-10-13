@@ -7,7 +7,7 @@ namespace Todora\Todos\UserInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Response;
 
-class BoardAction
+final class BoardAction
 {
     /**
      * @var EngineInterface

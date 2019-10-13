@@ -7,7 +7,7 @@ namespace Todora\Todos\UserInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Response;
 
-class HomeAction
+final class HomeAction
 {
     /**
      * @var EngineInterface
