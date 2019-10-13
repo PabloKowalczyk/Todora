@@ -34,7 +34,7 @@ before_script:
 before_install:
     - source .travis/xdebug.sh
     - xdebug-disable
-    - yes '' | pecl install -f apcu-5.1.9
+    - yes '' | pecl install -f apcu-5.1.17
     - composer self-update
 
 install:
