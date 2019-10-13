@@ -6,11 +6,10 @@ Encore
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
+    .enableSingleRuntimeChunk()
 
     // uncomment to define the assets of the project
-    .addEntry('js/vendor/bootstrap', './assets/js/bootstrap.js')
-    .addStyleEntry('css/todora', './assets/scss/todora.scss')
-    .addStyleEntry('css/vendor/bootstrap', './assets/scss/bootstrap.scss')
+    .addEntry('js/app', './assets/js/app.js')
     .enableSassLoader()
 
     // uncomment for legacy applications that require $/jQuery as a global variable
