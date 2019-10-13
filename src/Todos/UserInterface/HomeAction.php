@@ -4,24 +4,12 @@ declare(strict_types=1);
 
 namespace Todora\Todos\UserInterface;
 
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
-use Symfony\Component\HttpFoundation\Response;
+use Todora\Todos\Application\Response\TemplateResponse;
 
 final class HomeAction
 {
-    /**
-     * @var EngineInterface
-     */
-    private $engine;
-
-    public function __construct(EngineInterface $engine)
+    public function __invoke(): TemplateResponse
     {
-        $this->engine = $engine;
-    }
-
-    public function __invoke(): Response
-    {
-        return $this->engine
-            ->renderResponse('pages/home.html.twig');
+        return new TemplateResponse('pages/home.html.twig');
     }
 }
