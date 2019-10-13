@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Todora\Todos\Infrastructure\Symfony\PasswordEncoder;
 
-use Symfony\Component\Security\Core\Encoder\Argon2iPasswordEncoder;
+use Symfony\Component\Security\Core\Encoder\SodiumPasswordEncoder;
 use Todora\Todos\Domain\Service\AddUser\PasswordHasherInterface;
 
 final class SymfonySodiumPasswordEncoder implements PasswordHasherInterface
 {
-    /** @var Argon2iPasswordEncoder */
+    /** @var SodiumPasswordEncoder */
     private $argon2iPasswordEncoder;
 
-    public function __construct(Argon2iPasswordEncoder $argon2iPasswordEncoder)
+    public function __construct(SodiumPasswordEncoder $argon2iPasswordEncoder)
     {
         $this->argon2iPasswordEncoder = $argon2iPasswordEncoder;
     }
