@@ -3,7 +3,7 @@
 security:
     encoders:
         Todora\Todos\Infrastructure\Symfony\UserProvider\User:
-            algorithm: argon2i
+            algorithm: auto
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
