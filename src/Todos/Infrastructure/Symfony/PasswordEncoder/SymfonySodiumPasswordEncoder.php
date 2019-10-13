@@ -10,16 +10,16 @@ use Todora\Todos\Domain\Service\AddUser\PasswordHasherInterface;
 final class SymfonySodiumPasswordEncoder implements PasswordHasherInterface
 {
     /** @var SodiumPasswordEncoder */
-    private $argon2iPasswordEncoder;
+    private $sodiumPasswordEncoder;
 
-    public function __construct(SodiumPasswordEncoder $argon2iPasswordEncoder)
+    public function __construct(SodiumPasswordEncoder $sodiumPasswordEncoder)
     {
-        $this->argon2iPasswordEncoder = $argon2iPasswordEncoder;
+        $this->sodiumPasswordEncoder = $sodiumPasswordEncoder;
     }
 
     public function hash(string $password): string
     {
-        return $this->argon2iPasswordEncoder
+        return $this->sodiumPasswordEncoder
             ->encodePassword($password, null)
         ;
     }
