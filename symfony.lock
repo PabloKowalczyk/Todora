@@ -110,9 +110,6 @@
     "league/tactician-logger": {
         "version": "v0.10.0"
     },
-    "matthimatiker/opcache-bundle": {
-        "version": "0.7.0"
-    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
