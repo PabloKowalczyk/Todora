@@ -7,7 +7,7 @@ namespace Todora\Todos\Infrastructure\Symfony\PasswordEncoder;
 use Symfony\Component\Security\Core\Encoder\Argon2iPasswordEncoder;
 use Todora\Todos\Domain\Service\AddUser\PasswordHasherInterface;
 
-class Argon2iPasswordHasher implements PasswordHasherInterface
+final class Argon2iPasswordHasher implements PasswordHasherInterface
 {
     /** @var Argon2iPasswordEncoder */
     private $argon2iPasswordEncoder;
