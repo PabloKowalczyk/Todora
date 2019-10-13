@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5af026d10b02440878ba2cb8514d404",
+    "content-hash": "4b719126dde847879b9a0ed3b9542170",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -4611,33 +4611,33 @@
         },
         {
             "name": "dama/doctrine-test-bundle",
-            "version": "v5.0.3",
+            "version": "v6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmaicher/doctrine-test-bundle.git",
-                "reference": "29882b0d1a815f4819126ef714931bb24a31cbaa"
+                "reference": "2b7028e3748224921b42d23225bbb9016c8a303d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmaicher/doctrine-test-bundle/zipball/29882b0d1a815f4819126ef714931bb24a31cbaa",
-                "reference": "29882b0d1a815f4819126ef714931bb24a31cbaa",
+                "url": "https://api.github.com/repos/dmaicher/doctrine-test-bundle/zipball/2b7028e3748224921b42d23225bbb9016c8a303d",
+                "reference": "2b7028e3748224921b42d23225bbb9016c8a303d",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "~2.5",
-                "doctrine/doctrine-bundle": "~1.4",
-                "php": "^7.1",
-                "symfony/framework-bundle": "~2.7|~3.0|~4.0"
+                "doctrine/dbal": "~2.9",
+                "doctrine/doctrine-bundle": "~1.11",
+                "php": "^7.2",
+                "symfony/framework-bundle": "~3.0|~4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~6.0|~7.0|~8.0",
-                "symfony/phpunit-bridge": "~2.8|~3.0|~4.0",
-                "symfony/yaml": "~2.8|~3.0|~4.0"
+                "phpunit/phpunit": "~7.0|~8.0",
+                "symfony/phpunit-bridge": "~4.3",
+                "symfony/yaml": "~3.0|~4.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1.x-dev"
+                    "dev-master": "6.1.x-dev"
                 }
             },
             "autoload": {
@@ -4666,7 +4666,7 @@
                 "symfony 2",
                 "tests"
             ],
-            "time": "2019-03-22T10:34:17+00:00"
+            "time": "2019-07-10T14:13:32+00:00"
         },
         {
             "name": "doctrine/data-fixtures",
