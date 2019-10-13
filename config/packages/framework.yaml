@@ -4,8 +4,6 @@ framework:
     csrf_protection: ~
     #http_method_override: true
 
-    templating:
-        engine: 'twig'
     php_errors:
         log: true
 
