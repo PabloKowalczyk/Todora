@@ -28,3 +28,5 @@ services:
 
     Todora\SharedKernel\Application\CommandBusInterface:
         alias: Todora\SharedKernel\Infrastructure\CommandBus\TacticianCommandBus
+
+    Symfony\Component\Security\Core\Encoder\SodiumPasswordEncoder: ~

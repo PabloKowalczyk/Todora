@@ -1,0 +1,12 @@
+services:
+    _defaults:
+        autowire: true
+        public: true
+        autoconfigure: true
+
+    Todora\Tests\TestCase\:
+        resource: '../tests/TestCase/*'
+        exclude: '../tests/TestCase/Entity'
+
+    passowrd_hasher:
+        alias: 'Todora\Todos\Domain\Service\AddUser\PasswordHasherInterface'
