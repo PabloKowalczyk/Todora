@@ -6,7 +6,7 @@ services:
 
     Todora\Tests\TestCase\:
         resource: '../tests/TestCase/*'
-        exclude: '../tests/TestCase/Entity'
+        exclude: '../tests/TestCase/{Entity,IntegrationTestCase.php}'
 
     passowrd_hasher:
         alias: 'Todora\Todos\Domain\Service\AddUser\PasswordHasherInterface'
