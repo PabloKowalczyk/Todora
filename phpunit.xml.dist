@@ -14,7 +14,7 @@
     <php>
         <ini name="error_reporting" value="-1" />
         <server name="KERNEL_CLASS" value="Todora\Kernel" />
-        <env name="DATABASE_URL" value="pgsql://todora_test:todora_test@postgres_test:5432/todora_test?charset=UTF-8&amp;serverVersion=9.6" />
+        <server name="DATABASE_URL" value="pgsql://todora_test:todora_test@postgres_test:5432/todora_test?charset=UTF-8&amp;serverVersion=9.6" />
         <env name="SHELL_VERBOSITY" value="-1" />
         <env name="ADMIN_PASSWORD" value="admin" />
 
