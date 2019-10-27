@@ -47,7 +47,7 @@ script:
     - php bin/console cache:warmup -e test
     - composer todora:migrate:local
     - composer todora:analyze
-    - vendor/bin/phpunit
+    - DATABASE_URL=$DATABASE_URL vendor/bin/phpunit
 
 notifications:
     email: false
