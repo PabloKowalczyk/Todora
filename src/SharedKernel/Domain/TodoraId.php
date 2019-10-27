@@ -25,4 +25,9 @@ final class TodoraId
     {
         return new self();
     }
+
+    public function toString(): string
+    {
+        return (string) $this;
+    }
 }

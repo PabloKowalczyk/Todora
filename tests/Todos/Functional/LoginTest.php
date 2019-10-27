@@ -4,20 +4,27 @@ declare(strict_types=1);
 
 namespace Todora\Tests\Todos\Functional;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Todora\Tests\Traits\FixtureLoaderTrait;
+use Todora\SharedKernel\Domain\TodoraId;
+use Todora\Tests\TestCase\Entity\User;
+use Todora\Tests\TestCase\IntegrationTestCase;
 
-class LoginTest extends WebTestCase
+final class LoginTest extends IntegrationTestCase
 {
-    use FixtureLoaderTrait;
-
     /** @test */
     public function userCanLogin(): void
     {
         $client = self::createClient();
-
-        $this->loadFixture('user');
+        $todoraId = TodoraId::create();
+        $user = new User(
+            $this->passwordHasher(),
+            $todoraId,
+            'mail@mail.com',
+            'password',
+            'some-user',
+            true
+        );
+        $this->loadEntities($user);
 
         $crawler = $client->request('get', 'login');
 
@@ -29,7 +36,7 @@ class LoginTest extends WebTestCase
 
         $formNode = $crawler->filter('#login-form');
 
-        $form = $formNode->form(['_username' => 'admin@example.com', '_password' => 'admin']);
+        $form = $formNode->form(['_username' => 'mail@mail.com', '_password' => 'password']);
 
         $crawler = $client->submit($form);
         /** @var Response $response */

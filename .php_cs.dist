@@ -13,6 +13,7 @@ $finder = PhpCsFixer\Finder::create()
             __FILE__,
             "{$dir}/public/index.php",
             "{$dir}/bin/console",
+            "{$dir}/config/bundles.php",
         ]
     )
 ;
